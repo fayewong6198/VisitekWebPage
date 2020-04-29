@@ -1,0 +1,223 @@
+{% load static %}
+<div id="sticker" class="header-area header-area-3 hidden-xs">
+  <div class="container">
+    <div class="row">
+      <!-- logo start -->
+      <div class="col-md-3 col-sm-3">
+        <div class="logo">
+          <!-- Brand -->
+          <a class="navbar-brand page-scroll white-logo" href="index.html">
+            <img
+              style="width: 100%; height: auto;"
+              src="{% static 'img/logo/logo.png' %}"
+              alt=""
+            />
+          </a>
+          <a class="navbar-brand page-scroll black-logo" href="index.html">
+            <img
+              style="width: 100%; height: auto;"
+              src="{% static 'img/logo/logo1.png' %}"
+              alt=""
+            />
+          </a>
+        </div>
+        <!-- logo end -->
+      </div>
+      <div class="col-md-9 col-sm-9">
+        <div class="header-right-link">
+          <!-- search option start -->
+          <div class="search-inner">
+            <form action="#">
+              <div class="search-option" style="display: none;">
+                <input type="text" placeholder="Search..." />
+                <button class="button" type="submit">
+                  <i class="fa fa-search"></i>
+                </button>
+              </div>
+              <a class="main-search" href="#"><i class="fa fa-search"></i></a>
+            </form>
+          </div>
+          <a
+            type="button"
+            id="openModal"
+            class="s-menu"
+            data-backdrop="false"
+            data-toggle="modal"
+            data-target="#myModal"
+            >Tư vấn</a
+          >
+          <!-- Start Left contact -->
+          <div class="modal fade" id="myModal">
+            <div class="modal-dialog" id="2">
+              <div class="modal-content" id="3">
+                <h4 style="text-align: center;">
+                  <button
+                    style="width: 40px; height: 40px;"
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                  >
+                    &times;
+                  </button>
+                  Để lại lời nhắn
+                </h4>
+                <form
+                  id="contactForm"
+                  class="contact-form"
+                  action="{% url 'contact' %}"
+                  method="GET"
+                >
+                  <div class="col-md-6 col-sm-6 col-xs-6 m-2" id="contentBox">
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      class="form-control"
+                      placeholder="Full Name"
+                      required
+                      data-error="Please enter your name"
+                    />
+                    <div class="help-block with-errors"></div>
+                  </div>
+                  <div class="col-md-6 col-sm-6 col-xs-6" id="contentBox">
+                    <input
+                      type="text"
+                      name="phone"
+                      class="email form-control"
+                      id="email"
+                      placeholder="Phone Number"
+                      required
+                      data-error="Please enter your email"
+                    />
+                    <div class="help-block with-errors"></div>
+                  </div>
+                  <div class="col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      type="text"
+                      name="email"
+                      id="msg_subject"
+                      class="form-control"
+                      placeholder="Mail@gmail.com"
+                      required
+                      data-error="Please enter your message subject"
+                    />
+                    <div class="help-block with-errors"></div>
+                  </div>
+                  <div class="col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      type="text"
+                      name="subject"
+                      id="msg_subject"
+                      class="form-control"
+                      placeholder="Subject"
+                      required
+                      data-error="Please enter your message subject"
+                    />
+                    <div class="help-block with-errors"></div>
+                  </div>
+                  <div class="col-md-12 col-sm-12 col-xs-12">
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows="7"
+                      placeholder="Massage"
+                      class="form-control"
+                      required
+                      data-error="Write your message"
+                    ></textarea>
+                    <div class="help-block with-errors"></div>
+                  </div>
+                  <div class="modal-footer">
+                    <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                      <button
+                        style="margin-bottom: 5px;"
+                        type="submit"
+                        id="submit"
+                        class="add-btn contact-btn"
+                      >
+                        Gửi tin nhắn
+                      </button>
+                      <div id="msgSubmit" class="h3 text-center hidden"></div>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- End Left contact -->
+        </div>
+        <!-- mainmenu start -->
+        <nav class="navbar navbar-default">
+          <div class="collapse navbar-collapse" id="navbar-example">
+            <div class="main-menu">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="{% url 'index' %}">Trang chủ</a></li>
+                <li><a href="{% url 'about' %}">Giới thiệu</a></li>
+                <li>
+                  <a href="{% url 'service' %}">Dịch vụ</a>
+                  <ul class="sub-menu">
+                    <li>
+                      <a href="{% url 'detail_service' %}">Chi tiết dịch vụ</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="{% url 'blog' %}">Blog</a>
+                  <ul class="sub-menu">
+                    <li><a href="{% url 'blog1' 1 %}">Blog 1</a></li>
+                    <li><a href="{% url 'blog2' %}">Blog 2</a></li>
+                  </ul>
+                </li>
+                <li><a href="{% url 'contact' %}">Liên lạc</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <!-- mainmenu end -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- header-area end -->
+<!-- mobile-menu-area start -->
+<div class="mobile-menu-area hidden-lg hidden-md hidden-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="mobile-menu">
+          <div class="logo">
+            <a href="index.html"
+              ><img
+                style="width: 150px; height: 46px;"
+                src="../img/logo/logo.png"
+                alt=""
+            /></a>
+          </div>
+          <nav id="dropdown">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li>
+                <a class="pages" href="services.html">Services</a>
+                <ul class="sub-menu">
+                  <li><a href="service-details.html">Service Details</a></li>
+                </ul>
+              </li>
+              <li>
+                <a class="pages" href="#">Blog</a>
+                <ul class="sub-menu">
+                  <li><a href="blog.html">Blog grid</a></li>
+                  <li><a href="blog-sidebar.html">Blog List</a></li>
+                  <li><a href="blog-details.html">Blog Details</a></li>
+                </ul>
+              </li>
+              <li><a href="contact.html">contacts</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- mobile-menu-area end -->

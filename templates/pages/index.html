@@ -1,0 +1,577 @@
+{% extends 'base.html' %} {% load static %} {% block content%}
+<div class="intro-area intro-area-3">
+  <div class="intro-carousel">
+    <div class="intro-content-2">
+      <div class="slider-images">
+        <img
+          style="height: 760px;"
+          src="{% static 'img/home/home1.png' %}"
+          alt=""
+        />
+      </div>
+      <div class="slider-content">
+        <div class="display-table">
+          <div class="display-table-cell">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <!-- layer 1 -->
+                  <div class="layer-1 wow fadeInUp" data-wow-delay="0.3s">
+                    <h2 class="title2">
+                      Transforming into digital software company.
+                    </h2>
+                  </div>
+                  <!-- layer 2 -->
+                  <div class="layer-2 wow fadeInUp" data-wow-delay="0.5s">
+                    <p>
+                      We develop effective plans to move your customers
+                      behaviour.
+                    </p>
+                  </div>
+                  <!-- layer 3 -->
+                  <div class="layer-3 wow fadeInUp" data-wow-delay="0.7s">
+                    <a href="services.html" class="ready-btn left-btn"
+                      >Our Services</a
+                    >
+                    <a href="contact.html" class="ready-btn right-btn"
+                      >Contact us</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="intro-content-2 slide-2">
+      <div class="slider-images">
+        <img src="{% static 'img/slider/h3.jpg' %}" alt="" />
+      </div>
+      <div class="slider-content">
+        <div class="display-table">
+          <div class="display-table-cell">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <!-- layer 1 -->
+                  <div class="layer-1 wow fadeInUp" data-wow-delay="0.3s">
+                    <h2 class="title2">
+                      Transforming into digital software company.
+                    </h2>
+                  </div>
+                  <!-- layer 2 -->
+                  <div class="layer-2 wow fadeInUp" data-wow-delay="0.5s">
+                    <p>
+                      We develop effective plans to move your customers
+                      behaviour.
+                    </p>
+                  </div>
+                  <!-- layer 3 -->
+                  <div class="layer-3 wow fadeInUp" data-wow-delay="0.7s">
+                    <a href="#" class="ready-btn left-btn">Our Services</a>
+                    <a href="#" class="ready-btn right-btn">Contact us</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Slider Area -->
+<!-- Start service area -->
+<div class="service-area service-area-2 bg-color area-padding-2">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="section-headline-w1 text-center">
+                  <h3>Dịch vụ chuyên nghiệp</h3>
+                  <p>Giúp bạn có thể tiếp cận được với chuyên gia có khả năng và kinh nghiệm
+                  </p>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="all-services">
+              <!-- single dervices -->
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                  <div class="single-service wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+                      <div class="service-icon">
+                          <a href="{% url 'detail_service' %}"><span href="" class="flaticon-052-project-plan"></span></a>
+                      </div>
+                      <div class="service-inner">
+                          <div class="service-content">
+                              <h4 href="{% url 'detail_service' %}"><a href="{% url 'service_detail_manage' %}">Thiết kế sản phẩm </a></h4>
+                              <p>Chúng tôi giúp cho sự hiện diện trực tuyến của bạn trở nên tuyệt vời.</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- single dervices -->
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                  <div class="single-service wow fadeInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                      <div class="service-icon">
+                          <a href="{% url 'service_detail_repair' %}"><span href="{% url 'service_detail_manage' %}" class="flaticon-031-financial"></span></a>
+                      </div>
+                      <div class="service-inner">
+                          <div class="service-content">
+                              <h4><a href="{% url 'service_detail_repair' %}">Bảo trì hệ thống</a></h4>
+                              <p>Hệ thống CNTT của doanh nghiệp chạy trơn tru hơn và ít khả năng bị gián đoạn.</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- single dervices -->
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                  <div class="single-service wow fadeInUp" data-wow-delay="0.7s">
+                      <div class="service-icon">
+                          <a href="{% url 'service_detail_security'%}"><span class="flaticon-057-statistics"></span></a>
+                      </div>
+                      <div class="service-inner">
+                          <div class="service-content">
+                              <h4><a href="{% url 'service_detail_security'%}">Bảo mật hệ thống</a></h4>
+                              <p>Hãy chắc chắn rằng doanh nghiệp của bạn đã được bảo vệ an toàn !</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- single dervices -->
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                  <div class="single-service wow fadeInUp" data-wow-delay="0.3s">
+                      <div class="service-icon">
+                          <a href="{% url 'service_detail_consult'%}"><span class="flaticon-012-business"></span></a>
+                      </div>
+                      <div class="service-inner">
+                          <div class="service-content">
+                              <h4><a href="{% url 'service_detail_consult'%}">Tư vấn và triển khai hệ thống</a></h4>
+                              <p>Giúp doanh nghiệp hoạt động hiệu quả và cuối cùng là đạt được lợi nhuận trong kinh doanh.</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- single dervices -->
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                  <div class="single-service wow fadeInUp" data-wow-delay="0.5s">
+                      <div class="service-icon">
+                          <a href="{% url 'service_detail_outsource'%}"><span href="{% url 'service_detail_outsource'%}" class="flaticon-041-network"></span></a>
+                      </div>
+                      <div class="service-inner">
+                          <div class="service-content">
+                              <h4><a href="{% url 'service_detail_outsource'%}">Dịch vụ IT OUTSOURCE</a></h4>
+                              <p>Các doanh nghiệp giao công việc liên quan tới công nghệ thông tin cho một bên thứ ba cung cấp dịch vụ này.</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- single dervices -->
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                  <div class="single-service wow fadeInUp" data-wow-delay="0.7s">
+                      <div class="service-icon">
+                          <a href="{% url 'service_detail_manage' %}"><span class="flaticon-002-analysis"></span></a>
+                      </div>
+                      <div class="service-inner">
+                          <div class="service-content">
+                              <h4><a href="{% url 'service_detail_manage' %}l">Quản trị hệ thống</a></h4>
+                              <p>Giúp loại bỏ sự khó khăn của bạn về hệ thống và để chúng tôi hỗ trợ , phát triển công việc của bạn : thu hút khách hàng và phát triển công việc kinh doanh.</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- single dervices -->
+          </div>
+      </div>
+  </div>
+</div>
+<!-- End service area -->
+<!-- about-area start -->
+<div class="section-headline-w1 text-center">
+  <h3>Why Work With Us?</h3>
+</div>
+<!-- style="
+background: url(../img/background/ag1.jpg);
+
+background-repeat: no-repeat;
+background-size: cover;
+background-position: top center;
+background-attachment: scroll;" -->
+<div class="container-full">
+  <div class="row">
+      <div class="col-md-5 col-sm-4 col-xs-12">
+          <!-- <div class="about-area area-padding about-2 fix"> -->
+          <div class="about-image">
+              <img src="{% static 'img/home/homeConsult.png' %}" alt="">
+              <div class="video-content ">
+                  <a href="https://www.youtube.com/watch?v=O33uuBh6nXA" class="video-play vid-zone">
+                      <i class="fa fa-play"></i>
+                  </a>
+              </div>
+          </div>
+          <!-- </div> -->
+      </div>
+      <!-- column end -->
+      <div class="col-md-7 col-sm-8 col-xs-12">
+          <div class="support-all about-content">
+              <div class="section-headline right-headline white-headline">
+                  <h3>Hãy để chúng tôi làm <span class="color">hài lòng</span> bạn bằng những gì chúng tôi đang có</h3>
+              </div>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum odio officiis, est eius, sit nihil cum suscipit eligendi in tenetur vero voluptate veniam nisi possimus veritatis delectus, magni eaque modi?</p>
+              <div class="about-company">
+                  <div class="single-about">
+                      <span class="about-text">Đội ngũ chuyên nghiệp</span>
+                      <span class="about-text">Thanh toán bảo mật</span>
+                      <span class="about-text">Hỗ trợ trực tuyến</span>
+                  </div>
+                  <div class="single-about">
+                      <span class="about-text">Định hướng rõ ràng</span>
+                      <span class="about-text">Dịch vụ quốc tế</span>
+                      <span class="about-text">Chính sách Marketing</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- column end -->
+  </div>
+</div>
+</div>
+<!-- about-area end -->
+<!-- Start Counter area -->
+<div class="counter-area fix ">
+  <div class="section-headline-w4 text-center">
+      <h3>Statistics</h3>
+  </div>
+  <div class="container">
+      <div class="row" style="padding-top: 20px;">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="counter-image">
+                  <div class="rotmate-image rotateme">
+                      <img src="{% static 'img/home/home5.png' %}" alt="">
+                  </div>
+                  <div class="top-img">
+                      <img src="{% static 'img/home/name.png' %}" alt="">
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="fun-text-all">
+                  <!-- single counter  -->
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                      <div class="fun_text wow fadeInUp" data-wow-delay="0.2s">
+                          <span class="counter-icon"><i class="ti-layers"></i></span>
+                          <span class="counter">510</span>
+                          <h4>Total projects</h4>
+                      </div>
+                  </div>
+                  <!-- single counter  -->
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                      <div class="fun_text wow fadeInUp" data-wow-delay="0.3s">
+                          <span class="counter-icon"><i class="ti-world"></i></span>
+                          <span class="counter">120</span>
+                          <h4>Worldwide</h4>
+                      </div>
+                  </div>
+                  <!-- single counter  -->
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                      <div class="fun_text wow fadeInUp" data-wow-delay="0.4s">
+                          <span class="counter-icon"><i class="ti-cup"></i></span>
+                          <span class="counter">40</span>
+                          <h4>Awards win</h4>
+                      </div>
+                  </div>
+                  <!-- single counter  -->
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                      <div class="fun_text wow fadeInUp" data-wow-delay="0.5s">
+                          <span class="counter-icon"><i class="ti-user"></i></span>
+                          <span class="counter">30</span>
+                          <h4>Team member</h4>
+                      </div>
+                  </div>
+                  <!-- single counter  -->
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- End Counter area -->
+<!-- Start Team Banner area -->
+<!-- <div class="banner-area fix area-padding"> -->
+<!-- style="background: rgba(0, 0, 0, 0) url(../img/background/bg2.jpg) no-repeat scroll center center / cover;
+position: relative;"> -->
+<!-- <div class="container">
+      <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="add-content">
+                  <h3>CÔNG TY TNHH CÔNG NGHỆ THÔNG TIN VISITEK </h3>
+                  <div class="add-contact">
+                      <span class="call-us"><i class="ti-mobile"></i>Tel : 0584243459</span>
+                      <span class="call-us mail-us"><i class="ti-email"></i>Mail :
+                          Visitekvn@gmail.com</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div> -->
+<!-- End Team Banner area -->
+<!-- Start Tab Area -->
+<!-- <div class="tab-area bg-color fix area-padding">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="tab-menu">
+                  <!-- Start Nav tabs -->
+<!-- <ul class="nav nav-tabs" role="tablist">
+                      <li class="active">
+                          <a href="#p-view-1" role="tab" data-toggle="tab">
+                              <span class="cha-title">Bảo trì hệ thống </span>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="#p-view-2" role="tab" data-toggle="tab">
+                              <span class="cha-title">Tư vấn khách hàng</span>
+                          </a>
+                      </li>
+                  </ul> -->
+<!-- End Nav tabs -->
+<!-- </div>
+          </div>
+          <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="tab-content"> -->
+<!--Start Tab Content -->
+<!-- <div class="tab-pane active" id="p-view-1">
+                      <div class="tab-inner">
+                          <div class="single-machine row">
+                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                  <div class="tabe-img">
+                                      <img src="../img/home/home3.png" alt="">
+                                  </div>
+                              </div>
+                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                  <div class="machine-text">
+                                      <h3>Bảo trì hệ thống</h3>
+                                      <p>Bảo vệ, hạn chế tối đa những sự cố của hệ thống, điều này có thể làm tăng năng suất hoạt động và lợi nhuận của khách hàng. Cảnh báo về những sự cố có thể xảy ra trong một thời gian ngắn để doanh nghiệp có phương án dự phòng , bảo đảm quản lý hệ thống vận hành ở hiệu suất cao nhất. Đảm bảo thiết bị thay thế khi hệ thống gặp sự cố mà không khắc phục được. Phần mềm được kiểm tra, backup dữ liệu và các tiện ích mới của phần mềm hệ thống.
+                                      </p>
+                                      <ul>
+                                          <li><a href="#">Innovation idea latest business tecnology</a>
+                                          </li>
+                                          <li><a href="#">Digital content marketing online clients
+                                                  plateform</a>
+                                          </li>
+                                          <li><a href="#">Safe secure services for you online email
+                                                  account</a>
+                                          </li>
+                                          <li><a href="#">Innovation idea latest business tecnology</a>
+                                          </li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div> -->
+<!--Start Tab Content -->
+<!-- <div class="tab-pane" id="p-view-2">
+                      <div class="tab-inner">
+                          <div class="single-machine row">
+                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                  <div class="tabe-img">
+                                      <img src="../img/home/home4.png" alt="">
+                                  </div>
+                              </div>
+                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                  <div class="machine-text">
+                                      <h3>Tư vấn khách hàng</h3>
+                                      <p>Đội ngũ chuyên nghiệp trong lĩnh vực công nghệ thông tin hỗ trợ và tư vấn trong việc lựa chọn công nghệ mới giúp hạn chế rủi ro trong việc đẩu tư và khai thác tối đa hiệu suất của sản phẩm trong phạm vi cho phép
+                                      </p>
+                                      <ul>
+                                          <li><a href="#">Innovation idea latest business tecnology</a>
+                                          </li>
+                                          <li><a href="#">Digital content marketing online clients
+                                                  plateform</a>
+                                          </li>
+                                          <li><a href="#">Safe secure services for you online email
+                                                  account</a>
+                                          </li>
+                                          <li><a href="#">Innovation idea latest business tecnology</a>
+                                          </li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div> -->
+<!-- end Row -->
+<!-- </div>
+</div> -->
+<!-- End Tab end -->
+<!-- Start digital-services area -->
+<div class="service-area service-area-2 bg-color area-padding-2">
+
+  <div class="container">
+
+      <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="section-headline-w text-center">
+                  <h3>MÔI TRƯỜNG LÀM VIỆC</h3>
+                  <p>Tạo môi trường chuyên nghiệp để nhân sự trau dồi bản thân và đạt được những thành tựu trong tương lai
+                  </p>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+
+          <div class="all-services">
+              <!-- single dervices -->
+
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                  <div class="single-service wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+                      <div class="digital-img">
+                          <a class="digital-icon" href="#"><img src="{% static 'img/home/1.png' %}" alt=""></a>
+                      </div>
+                      <div class="digital-content">
+                          <h4>lương thưởng hợp lý</h4>
+                      </div>
+                      <div class="service-inner">
+                          <div class="service-content">
+                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores accusamus dolorum voluptates ut, autem facilis consequatur repellat iste sint possimus ratione, nisi perspiciatis, velit placeat vero quae aspernatur cupiditate provident.</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- single dervices -->
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                  <div class="single-service wow fadeInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                      <div class="digital-img">
+                          <a class="digital-icon" href="#"><img src="{% static 'img/home/2.png' %}" alt=""></a>
+                      </div>
+                      <div class="digital-content">
+                          <h4>Phong cách chuyên nghiệp</h4>
+                      </div>
+                      <div class="service-inner">
+                          <div class="service-content">
+                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores accusamus dolorum voluptates ut, autem facilis consequatur repellat iste sint possimus ratione, nisi perspiciatis, velit placeat vero quae aspernatur cupiditate provident.</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              
+              <!-- single dervices -->
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                  <div class="single-service wow fadeInUp" data-wow-delay="0.7s">
+                      <div class="digital-img">
+                          <a class="digital-icon" href="#"><img src="{% static 'img/home/3.png' %}" alt=""></a>
+                      </div>
+                      <div class="digital-content">
+                          <h4>Môi trường sáng tạo</h4>
+                      </div>
+                      <div class="service-inner">
+                          <div class="service-content">
+                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores accusamus dolorum voluptates ut, autem facilis consequatur repellat iste sint possimus ratione, nisi perspiciatis, velit placeat vero quae aspernatur cupiditate provident.</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- single dervices -->
+             
+           </div>
+          
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                  <div class="single-service wow fadeInUp" data-wow-delay="0.3s">
+                      <div class="digital-img">
+                          <a class="digital-icon" href="#"><img src="{% static 'img/home/4.png' %}" alt=""></a>
+                      </div>
+                      <div class="digital-content">
+                          <h4>Chế độ đãi ngộ </h4>
+                      </div>
+                      <div class="service-inner">
+                          <div class="service-content">
+                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores accusamus dolorum voluptates ut, autem facilis consequatur repellat iste sint possimus ratione, nisi perspiciatis, velit placeat vero quae aspernatur cupiditate provident.</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- single dervices -->
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                  <div class="single-service wow fadeInUp" data-wow-delay="0.5s" >
+                      <div class="digital-img">
+                          <a class="digital-icon" href="#"><img src="{% static 'img/home/5.png' %}" alt=""></a>
+                      </div>
+                      <div class="digital-content">
+                          <h4>Sức khỏe là số 1</h4>
+                      </div>
+                      <div class="service-inner">
+                          <div class="service-content">
+                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores accusamus dolorum voluptates ut, autem facilis consequatur repellat iste sint possimus ratione, nisi perspiciatis, velit placeat vero quae aspernatur cupiditate provident.</p>
+                          </div>
+                      </div>
+                              <!-- single dervices -->
+            </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- End digital-servicesarea -->
+<!-- Start Blog Area-->
+<div class="blog-area fix bg-color area-padding-2">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="section-headline-w2 text-center">
+                  <h3>TIN TỨC MỚI NHẤT</h3>
+                  <p>Công nghệ mới, phát triển mới
+                  </p>
+              </div>
+          </div>
+      </div>
+      
+      <div class="row">
+          <div class="blog-grid home-blog">
+              
+            {% if blogs is not None %}
+            {% for blog in blogs %}
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="single-blog">
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="admin-type">
+                                <i class="fa fa-user"></i>
+                                Admin
+                            </span>
+                            <span class="date-type">
+                                <i class="fa fa-calendar"></i>
+                                {{blog.created_at}}
+                            </span>
+                            <span class="comments-type">
+                                <i class="fa fa-comment-o"></i>
+                                32
+                            </span>
+                        </div>
+                        <a href="{% url 'blog1' blog.id %}">
+                            <h4>{{ blog.title }}</h4>
+                        </a>
+                    </div>
+                    <div class="blog-image">
+                        <a class="image-scale" href="#">
+                            <img src="{{ blog.images.first }}" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- End single blog -->
+            {% endfor %}
+            {% else %}
+            {% endif %}
+              
+          </div>
+      </div>
+      <!-- End row -->
+  </div>
+</div>
+<!-- End Blog Area-->
+
+{% endblock %}

@@ -1,0 +1,70 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Trang chủ | Visitek</title>
+    <meta name="description" content="" />
+
+    <!-- favicon -->
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="{% static 'img/logo/logo1.png' %}"
+    />
+    <!-- all css here -->
+    <!-- bootstrap v3.3.6 css -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <!-- font-awesome css -->
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}" />
+    <!-- style css -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <title>Visitek</title>
+  </head>
+  <body>
+    <header class="header-one">
+      {% include 'partials/_header.html' %} {% include 'partials/_navbar.html'%}
+    </header>
+
+    {% block content %} {% endblock %} {% include 'partials/_footer.html' %}
+
+    <script src="{% static 'js/modernizr-2.8.3.min.js' %}"></script>
+    <script src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
+    <!-- bootstrap js -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- owl.carousel js -->
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <!-- Counter js -->
+    <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+    <!-- waypoint js -->
+    <script src="{% static 'js/waypoints.js' %}"></script>
+    <!-- magnific js -->
+    <script src="{% static 'js/magnific.min.js' %}"></script>
+    <!-- wow js -->
+    <script src="{% static 'js/wow.min.js' %}"></script>
+    <!-- venobox js -->
+    <script src="{% static 'js/venobox.min.js' %}"></script>
+    <!-- meanmenu js -->
+    <script src="{% static 'js/jquery.meanmenu.js' %}"></script>
+    <!-- Form validator js -->
+    <script src="{% static 'js/form-validator.min.js' %}"></script>
+    <!-- plugins js -->
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <!-- main js -->
+    <script src="{% static 'js/main.js' %}"></script>
+    <script>
+      // Get the modal
+      var modal = document.getElementById("myModal");
+
+      // When the user clicks anywhere outside of the modal, close it
+      $("#myModal").click(function (ev) {
+        if (ev.target != this) return;
+        $("#myModal").modal("hide");
+      });
+    </script>
+  </body>
+</html>
