@@ -83,16 +83,16 @@
         <div class="contact-form">
           <div class="row">
             <form
-              id="contactForm"
+              id="contactForm1"
               method="POST"
-              action="{% url 'contact' %}"
+              action="{% url 'contacts' %}"
               class="contact-form"
             >
               {% csrf_token %}
               <div class="col-md-6 col-sm-6 col-xs-12">
                 <input
                   type="text"
-                  id="name"
+                  id="name1"
                   class="form-control"
                   placeholder="Name"
                   name="name"
@@ -106,7 +106,7 @@
                   type="email"
                   name="email"
                   class="email form-control"
-                  id="email"
+                  id="email1"
                   placeholder="Email"
                   required
                   data-error="Please enter your email"
@@ -116,7 +116,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <input
                   type="text"
-                  id="msg_subject"
+                  id="msg_subject1"
                   class="form-control"
                   name="subject"
                   placeholder="Subject"
@@ -127,7 +127,7 @@
               </div>
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <textarea
-                  id="message"
+                  id="message1"
                   rows="7"
                   name="message"
                   placeholder="Massage"
@@ -138,10 +138,10 @@
                 <div class="help-block with-errors"></div>
               </div>
               <div class="col-md-12 col-sm-12 col-xs-12 text-center">
-                <button type="submit" id="submit" class="add-btn contact-btn">
+                <button type="submit" id="ssubmit1" class="add-btn contact-btn">
                   Send Message
                 </button>
-                <div id="msgSubmit" class="h3 text-center hidden"></div>
+                <div id="msgSubmit1" class="h3 text-center hidden"></div>
                 <div class="clearfix"></div>
               </div>
             </form>

@@ -62,16 +62,20 @@
                   Để lại lời nhắn
                 </h4>
                 <form
-                  id="contactForm"
+                  id="contactFormConsult"
                   class="contact-form"
-                  action="{% url 'contact' %}"
-                  method="GET"
+                  action="{% url 'consults' %}"
+                  method="POST"
                 >
-                  <div class="col-md-6 col-sm-6 col-xs-6 m-2" id="contentBox">
+                  {% csrf_token %}
+                  <div
+                    class="col-md-6 col-sm-6 col-xs-6 m-2"
+                    class="contentBox"
+                  >
                     <input
                       type="text"
                       id="name"
-                      name="name"
+                      name="name1"
                       class="form-control"
                       placeholder="Full Name"
                       required
@@ -79,12 +83,12 @@
                     />
                     <div class="help-block with-errors"></div>
                   </div>
-                  <div class="col-md-6 col-sm-6 col-xs-6" id="contentBox">
+                  <div class="col-md-6 col-sm-6 col-xs-6" class="contentBox">
                     <input
                       type="text"
-                      name="phone"
-                      class="email form-control"
-                      id="email"
+                      name="phone1"
+                      class="form-control"
+                      id="phone"
                       placeholder="Phone Number"
                       required
                       data-error="Please enter your email"
@@ -94,8 +98,8 @@
                   <div class="col-md-12 col-sm-12 col-xs-12">
                     <input
                       type="text"
-                      name="email"
-                      id="msg_subject"
+                      name="email1"
+                      id="email"
                       class="form-control"
                       placeholder="Mail@gmail.com"
                       required
@@ -106,7 +110,7 @@
                   <div class="col-md-12 col-sm-12 col-xs-12">
                     <input
                       type="text"
-                      name="subject"
+                      name="subject1"
                       id="msg_subject"
                       class="form-control"
                       placeholder="Subject"
@@ -118,7 +122,7 @@
                   <div class="col-md-12 col-sm-12 col-xs-12">
                     <textarea
                       id="message"
-                      name="message"
+                      name="message1"
                       rows="7"
                       placeholder="Massage"
                       class="form-control"
@@ -132,12 +136,15 @@
                       <button
                         style="margin-bottom: 5px;"
                         type="submit"
-                        id="submit"
+                        id="submitsdfghjkl;"
                         class="add-btn contact-btn"
                       >
                         Gửi tin nhắn
                       </button>
-                      <div id="msgSubmit" class="h3 text-center hidden"></div>
+                      <div
+                        id="msgSubmitghdcjvkbl"
+                        class="h3 text-center hidden"
+                      ></div>
                       <div class="clearfix"></div>
                     </div>
                   </div>
