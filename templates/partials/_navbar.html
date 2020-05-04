@@ -7,10 +7,18 @@
         <div class="logo">
           <!-- Brand -->
           <a class="navbar-brand page-scroll white-logo" href="index.html">
-            <img style="width: 100%; height: auto;" src="{% static 'img/logo/logo.png' %}" alt="" />
+            <img
+              style="width: 100%; height: auto;"
+              src="{% static 'img/logo/logo.png' %}"
+              alt=""
+            />
           </a>
           <a class="navbar-brand page-scroll black-logo" href="index.html">
-            <img style="width: 100%; height: auto;" src="{% static 'img/logo/logo1.png' %}" alt="" />
+            <img
+              style="width: 100%; height: auto;"
+              src="{% static 'img/logo/logo1.png' %}"
+              alt=""
+            />
           </a>
         </div>
         <!-- logo end -->
@@ -29,52 +37,116 @@
               <a class="main-search" href="#"><i class="fa fa-search"></i></a>
             </form>
           </div>
-          <a type="button" id="openModal" class="s-menu" data-backdrop="false" data-toggle="modal"
-            data-target="#myModal">Tư vấn</a>
+          <a
+            type="button"
+            id="openModal"
+            class="s-menu"
+            data-backdrop="false"
+            data-toggle="modal"
+            data-target="#myModal"
+            >Tư vấn</a
+          >
           <!-- Start Left contact -->
           <div class="modal fade" id="myModal">
             <div class="modal-dialog" id="2">
               <div class="modal-content" id="3">
                 <h4 style="text-align: center;">
-                  <button style="width: 40px; height: 40px;" type="button" class="close" data-dismiss="modal">
+                  <button
+                    style="width: 40px; height: 40px;"
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                  >
                     &times;
                   </button>
                   Để lại lời nhắn
                 </h4>
-                <form id="contactFormConsult" class="contact-form" action="{% url 'consults' %}" method="POST">
+                <form
+                  id="contactFormConsult"
+                  class="contact-form"
+                  action="{% url 'consults' %}"
+                  method="POST"
+                >
                   {% csrf_token %}
-                  <div class="col-md-6 col-sm-6 col-xs-6 m-2" class="contentBox">
-                    <input type="text" id="name" name="name1" class="form-control" placeholder="Full Name" required
-                      data-error="Please enter your name" style="margin-top: 25px;" />
+                  <div
+                    class="col-md-6 col-sm-6 col-xs-6 m-2"
+                    class="contentBox"
+                  >
+                    <input
+                      type="text"
+                      id="name"
+                      name="name1"
+                      class="form-control"
+                      placeholder="Full Name"
+                      required
+                      data-error="Please enter your name"
+                      style="margin-top: 25px;"
+                    />
                     <div class="help-block with-errors"></div>
                   </div>
                   <div class="col-md-6 col-sm-6 col-xs-6" class="contentBox">
-                    <input type="text" name="phone1" class="form-control" id="phone" placeholder="Phone Number" required
-                      data-error="Please enter your email" style="margin-top: 25px;" />
+                    <input
+                      type="text"
+                      name="phone1"
+                      class="form-control"
+                      id="phone"
+                      placeholder="Phone Number"
+                      required
+                      data-error="Please enter your email"
+                      style="margin-top: 25px;"
+                    />
                     <div class="help-block with-errors"></div>
                   </div>
                   <div class="col-md-12 col-sm-12 col-xs-12">
-                    <input type="text" name="email1" id="email" class="form-control" placeholder="Mail@gmail.com"
-                      required data-error="Please enter your message subject" />
+                    <input
+                      type="text"
+                      name="email1"
+                      id="email"
+                      class="form-control"
+                      placeholder="Mail@gmail.com"
+                      required
+                      data-error="Please enter your message subject"
+                    />
                     <div class="help-block with-errors"></div>
                   </div>
                   <div class="col-md-12 col-sm-12 col-xs-12">
-                    <input type="text" name="subject1" id="msg_subject" class="form-control" placeholder="Subject"
-                      required data-error="Please enter your message subject" />
+                    <input
+                      type="text"
+                      name="subject1"
+                      id="msg_subject"
+                      class="form-control"
+                      placeholder="Subject"
+                      required
+                      data-error="Please enter your message subject"
+                    />
                     <div class="help-block with-errors"></div>
                   </div>
                   <div class="col-md-12 col-sm-12 col-xs-12">
-                    <textarea id="message" name="message1" rows="7" placeholder="Massage" class="form-control" required
-                      data-error="Write your message"></textarea>
+                    <textarea
+                      id="message"
+                      name="message1"
+                      rows="7"
+                      placeholder="Massage"
+                      class="form-control"
+                      required
+                      data-error="Write your message"
+                    ></textarea>
                     <div class="help-block with-errors"></div>
                   </div>
                   <div class="modal-footer">
                     <div class="col-md-12 col-sm-12 col-xs-12 text-center">
-                      <button style="margin-bottom: 5px;" type="submit" id="submitsdfghjkl;"
-                        class="add-btn contact-btn">
+                      <button
+                        style="margin-bottom: 5px;"
+                        type="submit"
+                        id="submitsdfghjkl;"
+                        class="add-btn contact-btn"
+                      >
                         Gửi tin nhắn
                       </button>
-                      <div id="msgSubmitghdcjvkbl" class="h3 text-center hidden"></div>
+                      <div
+                        id="msgSubmitghdcjvkbl"
+                        class="h3 text-center hidden"
+                      ></div>
                       <div class="clearfix"></div>
                     </div>
                   </div>
@@ -118,7 +190,10 @@
 </div>
 <!-- header-area end -->
 <!-- mobile-menu-area start -->
-<div class="mobile-menu-area hidden-lg hidden-md hidden-sm" style="background: #fff;">
+<div
+  class="mobile-menu-area hidden-lg hidden-md hidden-sm"
+  style="background: #fff;"
+>
   <div class="container">
     <div class="row">
       <div class="col-md-12">
@@ -138,7 +213,9 @@
               <li>
                 <a class="pages" href="{% url 'service' %}">Services</a>
                 <ul class="sub-menu">
-                  <li><a href="{% url 'detail_service' %}">Service Details</a></li>
+                  <li>
+                    <a href="{% url 'detail_service' %}">Service Details</a>
+                  </li>
                 </ul>
               </li>
               <li>
