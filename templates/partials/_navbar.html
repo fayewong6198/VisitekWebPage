@@ -6,14 +6,14 @@
       <div class="col-md-3 col-sm-3">
         <div class="logo">
           <!-- Brand -->
-          <a class="navbar-brand page-scroll white-logo" href="index.html">
+          <a class="navbar-brand page-scroll white-logo" href="{% url 'index' %}">
             <img
               style="width: 100%; height: auto;"
               src="{% static 'img/logo/logo.png' %}"
               alt=""
             />
           </a>
-          <a class="navbar-brand page-scroll black-logo" href="index.html">
+          <a class="navbar-brand page-scroll black-logo" href="{% url 'index' %}">
             <img
               style="width: 100%; height: auto;"
               src="{% static 'img/logo/logo1.png' %}"
@@ -197,26 +197,26 @@
             <a href="index.html"
               ><img
                 style="width: 150px; height: 46px;"
-                src="../img/logo/logo.png"
+                src="{% static 'img/logo/logo.png' %}"
                 alt=""
             /></a>
           </div>
           <nav id="dropdown">
             <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About</a></li>
+              <li><a href="{% url 'index' %}">Home</a></li>
+              <li><a href="{% url 'about' %}">About</a></li>
               <li>
-                <a class="pages" href="services.html">Services</a>
+                <a class="pages" href="{% url 'service' %}">Services</a>
                 <ul class="sub-menu">
-                  <li><a href="service-details.html">Service Details</a></li>
+                  <li><a href="{% url 'detail_service' %}">Service Details</a></li>
                 </ul>
               </li>
               <li>
-                <a class="pages" href="#">Blog</a>
+                <a class="pages" href="{% url 'blog' %}">Blog</a>
                 <ul class="sub-menu">
-                  <li><a href="blog.html">Blog grid</a></li>
-                  <li><a href="blog-sidebar.html">Blog List</a></li>
-                  <li><a href="blog-details.html">Blog Details</a></li>
+                  <li><a href="{% url 'blog' %}">Blog grid</a></li>
+                  <li><a href="{% url 'blog1'">Blog List</a></li>
+                  <li><a href="{% url 'blog2'">Blog Details</a></li>
                 </ul>
               </li>
               <li><a href="contact.html">contacts</a></li>

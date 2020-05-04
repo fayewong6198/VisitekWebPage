@@ -36,7 +36,12 @@ def contact(request):
 
 
 def blog(request):
-    return render(request, 'pages/blog/blog.html')
+    blogs = Blog.objects.order_by('-created_at')[:6]
+
+    context = {
+        'blogs': blogs
+    }
+    return render(request, 'pages/blog/blog.html', context)
 
 
 def blog1(request, id):

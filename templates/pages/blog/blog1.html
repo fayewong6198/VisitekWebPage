@@ -133,10 +133,10 @@
           </div>
           <div class="clear"></div>
           <div class="single-post-comments">
-            <div class="comments-area">
+            {% comment %} <div class="comments-area">
               <div class="comments-heading">
                 <h3>4 comments</h3>
-              </div>
+              </div> 
               <div class="comments-list">
                 <ul>
                   <li>
@@ -180,8 +180,7 @@
                   </li>
                   <li>
                     <!-- Your embedded comments code -->
-                    <div class="fb-comments" data-href="http://localhost:8000/blog1/{{ id }}#" data-numposts="5" data-width=""></div>
-                    </div>
+                    
                   </li>
                   <li class="threaded-comments">
                     <div class="comments-details">
@@ -205,7 +204,9 @@
                   </li>
                 </ul>
               </div>
-            </div>
+            </div> {% endcomment %}
+            <div class="fb-comments" data-href="http://localhost:8000/blog1/{{ id }}#" data-numposts="5" data-width=""></div>
+                    </div>
             <div class="comment-respond">
               <h3 class="comment-reply-title">Leave a Reply</h3>
               <span class="email-notes"
