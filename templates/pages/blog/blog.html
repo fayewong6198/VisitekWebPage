@@ -33,39 +33,48 @@
     <div class="row">
       <div class="blog-grid home-blog">
         <!-- Start single blog -->
-        <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="single-blog">
-            <!-- <div class="blog-image">
-              <a class="image-scale" href="#">
-                <img src="../img/blog/b1.jpg" alt="" />
-              </a>
-            </div> -->
-            <div class="blog-content">
-              <div class="blog-meta">
-                <span class="admin-type">
-                  <i class="fa fa-user"></i>
-                  Admin
-                </span>
-                <span class="date-type">
-                  <i class="fa fa-calendar"></i>
-                  20 july, 2019
-                </span>
-                <span class="comments-type">
-                  <i class="fa fa-comment-o"></i>
-                  13
-                </span>
-              </div>
-              <a href="#">
-                <h4>
-                  Những người phụ nữ truyền cảm hứng cho giới trẻ khởi nghiệp
-                  bằng công nghệ
-                </h4>
-              </a>
-            </div>
-          </div>
-        </div>
+        {% if blogs is not None %}
+                {% for blog in blogs %}
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="blog-container">
+
+                        <div class="single-blog">
+                            <div class="blog-image">
+                                <a class="image-scale" href="#">
+                                    <img src="{{ blog.images.first }}" alt="">
+                                </a>
+                            </div>
+                            <div class="blog-content">
+                                <div> <a href="{% url 'blog1' blog.id %}">
+                                        <h4>{{ blog.title }}</h4>
+                                    </a></div>
+
+                                <div class="blog-meta">
+                                    <span class="admin-type">
+                                        <i class="fa fa-user"></i>
+                                        Admin
+                                    </span>
+                                    <span class="date-type">
+                                        <i class="fa fa-calendar"></i>
+                                        {{blog.created_at}}
+                                    </span>
+                                    <span class="comments-type">
+                                        <i class="fa fa-comment-o"></i>
+                                        32
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <!-- End single blog -->
+                {% endfor %}
+                {% else %}
+                {% endif %}
         <!-- End single blog -->
-        <!-- Start single blog -->
+        {% comment %} <!-- Start single blog -->
         <div class="col-md-4 col-sm-6 col-xs-12">
           <div class="single-blog">
             <div class="blog-content">
@@ -221,7 +230,7 @@
             </div> -->
           </div>
         </div>
-        <!-- End single blog -->
+        <!-- End single blog --> {% endcomment %}
       </div>
     </div>
     <!-- End row -->
