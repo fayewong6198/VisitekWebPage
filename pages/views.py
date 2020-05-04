@@ -43,7 +43,8 @@ def blog1(request, id):
     blog = get_object_or_404(Blog, pk=id)
 
     context = {
-        'blog': blog
+        'blog': blog,
+        'id': id
     }
     return render(request, 'pages/blog/blog1.html', context)
 

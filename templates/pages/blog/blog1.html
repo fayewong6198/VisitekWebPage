@@ -1,4 +1,6 @@
 {% extends 'base.html' %} {% load static %} {% block content%}
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v6.0"></script>
 <!-- Start Bottom Header -->
 <div class="page-area">
   <div class="breadcumb-overlay"></div>
@@ -177,22 +179,8 @@
                     </div>
                   </li>
                   <li>
-                    <div class="comments-details">
-                      <div class="comments-list-img">
-                        <img src="../img/blog/avater2.png" alt="post-author" />
-                      </div>
-                      <div class="comments-content-wrap">
-                        <span>
-                          <b><a href="#">Andre</a></b>
-                          Post author
-                          <span class="post-time">Sep 11, 2019</span>
-                          <a href="#">Reply</a>
-                        </span>
-                        <p>
-                          Quisque semper nunc vitae erat pellentesque, ac
-                          placerat arcu consectetur
-                        </p>
-                      </div>
+                    <!-- Your embedded comments code -->
+                    <div class="fb-comments" data-href="http://localhost:8000/blog1/{{ id }}#" data-numposts="5" data-width=""></div>
                     </div>
                   </li>
                   <li class="threaded-comments">
@@ -387,5 +375,12 @@
     <!-- End row -->
   </div>
 </div>
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script
+  async
+  defer
+  src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6"
+></script>
 <!--End of Blog Area-->
 {%endblock%}
