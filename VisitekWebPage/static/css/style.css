@@ -742,7 +742,7 @@ div#preloader {
 /*----------------------------------------*/
 
 .mobile-menu-area {
-  background: #fff none repeat scroll 0 0;
+  background: rgba(255, 255, 255, 0.25) none repeat scroll 0 0;
   padding: 10px 0px;
 }
 
@@ -4019,9 +4019,7 @@ span.email-notes {
     min-height: 540px;
     object-fit: cover;
   }
-  .about-content {
-    padding: 70px 30px 70px 30px;
-  }
+
   .about-text {
     font-size: 14px;
   }
@@ -4299,9 +4297,7 @@ span.email-notes {
     min-height: 500px;
     object-fit: cover;
   }
-  .about-2 .about-image {
-    min-height: 150px;
-  }
+
   .video-content {
     margin-top: -30px;
   }
@@ -4997,7 +4993,7 @@ a.meanmenu-reveal {
   z-index: 999999;
 }
 .mean-container a.meanmenu-reveal {
-  color: #252525;
+  color: #fff;
   cursor: pointer;
   display: block;
   float: right;
@@ -5014,12 +5010,13 @@ a.meanmenu-reveal {
   width: 30px;
 }
 .mean-container a.meanmenu-reveal span {
-  background: #252525 none repeat scroll 0 0;
+  background: #fff none repeat scroll 0 0;
   display: block;
   height: 2px;
   margin-top: 5px;
   width: 28px;
 }
+
 .mean-container .mean-nav {
   float: left;
   width: 100%;
@@ -5053,7 +5050,7 @@ a.meanmenu-reveal {
   font-weight: bold;
 }
 .mobile-menu-area {
-  background: #323333 none repeat scroll 0 0;
+  background: #8e55a3 none repeat scroll 0 0;
 }
 .mean-container .mean-nav ul li li a {
   border-top: 1px solid rgba(255, 255, 255, 0.25);
@@ -6007,7 +6004,7 @@ img.mfp-img {
   cursor: pointer;
 }
 @media screen and (max-width: 800px) and (orientation: landscape),
-  screen and (max-height: 300px) {
+  screen and (max-height: 500px) {
   .mfp-img-mobile .mfp-image-holder {
     padding-left: 0;
     padding-right: 0;
