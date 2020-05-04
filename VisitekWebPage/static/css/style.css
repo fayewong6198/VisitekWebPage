@@ -5088,6 +5088,46 @@ a.meanmenu-reveal {
   margin-top: 1px;
   padding: 18px 12px !important;
   text-align: center;
+<<<<<<< HEAD
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 2;
+  font-weight: 500;
+  border: 0 !important;
+  background: #f8f8f8;
+}
+.mean-container .mean-nav ul li a.mean-expand:hover {
+  background: none;
+}
+.mean-container .mean-push {
+  float: left;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  clear: both;
+}
+.mean-nav .wrapper {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.mean-container .mean-bar,
+.mean-container .mean-bar * {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+.mean-remove {
+  display: none !important;
+}
+.mean-container .mean-bar::after {
+  color: #ffffff;
+  content: "";
+  font-size: 21px;
+  left: 5%;
+=======
+>>>>>>> 0c974cf972ad066c267225e3695daeda46ffbef8
   position: absolute;
   right: 0;
   top: 0;

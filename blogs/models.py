@@ -6,6 +6,7 @@ from datetime import datetime
 class Blog(models.Model):
     title = models.CharField(max_length=255)
     content = models.TextField()
+    category = models.CharField(max_length=255, default='Business')
     created_at = models.DateField(default=datetime.now)
 
     def __str__(self):
