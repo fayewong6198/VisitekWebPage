@@ -1,4 +1,24 @@
 {% extends 'base.html' %} {% load static %} {% block content%}
+
+<!-- Start Bottom Header -->
+<div class="page-area">
+  <div class="breadcumb-overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="breadcrumb text-center">
+          <div class="section-headline white-headline text-center">
+            <h3>Giới thiệu</h3>
+          </div>
+          <ul>
+            <li class="home-bread">Trang chủ</li>
+            <li>Giới thiệu</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- Welcome service area start -->
 <div class="welcome-area area-padding">
   <div class="container">
@@ -8,9 +28,7 @@
           <!-- single-well end-->
           <div class="well-services wow fadeInUp" data-wow-delay="0.3s">
             <div class="services-img">
-              <a class="big-icon" href="#"
-                ><i class="flaticon-052-project-plan"></i
-              ></a>
+              <a class="big-icon" href="#"><i class="flaticon-052-project-plan"></i></a>
             </div>
             <div class="main-wel">
               <div class="wel-content">
@@ -23,9 +41,7 @@
           <!-- single-well end-->
           <div class="well-services wow fadeInUp" data-wow-delay="0.7s">
             <div class="services-img">
-              <a class="big-icon" href="#"
-                ><i class="flaticon-002-analysis"></i
-              ></a>
+              <a class="big-icon" href="#"><i class="flaticon-002-analysis"></i></a>
             </div>
             <div class="main-wel">
               <div class="wel-content">
@@ -38,9 +54,7 @@
           <!-- single-well end-->
           <div class="well-services wow fadeInUp" data-wow-delay="0.5s">
             <div class="services-img">
-              <a class="big-icon" href="#"
-                ><i class="flaticon-060-team-work"></i
-              ></a>
+              <a class="big-icon" href="#"><i class="flaticon-060-team-work"></i></a>
             </div>
             <div class="main-wel">
               <div class="wel-content">
@@ -63,36 +77,41 @@
   <div class="container-full">
     <div class="row">
       <div class="col-md-5 col-sm-4 col-xs-12">
+        <!-- <div class="about-area area-padding about-2 fix"> -->
         <div class="about-image">
-          <div class="video-content">
-            <a
-              href="https://www.youtube.com/watch?v=O33uuBh6nXA"
-              class="video-play vid-zone"
-            >
+          <img src="{% static 'img/home/homeConsult.png' %}" alt="">
+          <div class="video-content ">
+            <a href="https://www.youtube.com/watch?v=O33uuBh6nXA" class="video-play vid-zone">
               <i class="fa fa-play"></i>
             </a>
           </div>
         </div>
+        <!-- </div> -->
       </div>
       <!-- column end -->
-      <div class="col-md-7 col-sm-8 col-xs-12">
-        <div class="support-all about-content">
-          <div class="section-headline right-headline white-headline">
-            <h3>
-              Hãy để chúng tôi làm <span class="color">hài lòng</span> bạn bằng
-              những gì chúng tôi đang có
+      <div class="support-all about-content" style="padding: 40px;">
+        <div class="section-headline right-headline white-headline">
+          <div class="container-fluid">
+            <h3>Hãy để chúng tôi làm <span class="color">hài lòng</span> bạn bằng những gì chúng tôi đang có
             </h3>
-          </div>
-          <div class="about-company">
-            <div class="single-about">
-              <span class="about-text">Đội ngũ chuyên nghiệp</span>
-              <span class="about-text">Thanh toán bảo mật</span>
-              <span class="about-text">Hỗ trợ trực tuyến</span>
-            </div>
-            <div class="single-about">
-              <span class="about-text">Định hướng rõ ràng</span>
-              <span class="about-text">Dịch vụ quốc tế</span>
-              <span class="about-text">Chính sách Marketing</span>
+
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum odio officiis, est eius, sit
+              nihil
+              cum suscipit eligendi in tenetur vero voluptate veniam nisi possimus veritatis delectus,
+              magni
+              eaque
+              modi?</p>
+            <div class="about-company">
+              <div class="single-about">
+                <span class="about-text">Đội ngũ chuyên nghiệp</span>
+                <span class="about-text">Thanh toán bảo mật</span>
+                <span class="about-text">Hỗ trợ trực tuyến</span>
+              </div>
+              <div class="single-about">
+                <span class="about-text">Định hướng rõ ràng</span>
+                <span class="about-text">Dịch vụ quốc tế</span>
+                <span class="about-text">Chính sách Marketing</span>
+              </div>
             </div>
           </div>
         </div>
@@ -109,10 +128,10 @@
       <div class="col-md-6 col-sm-6 col-xs-12">
         <div class="counter-image">
           <div class="rotmate-image rotateme">
-            <img src="../img/home/home2.png" alt="" />
+            <img src="{% static 'img/home/home5.png' %}" alt="" />
           </div>
           <div class="top-img">
-            <img src="../img/logo/logo1.png" alt="" />
+            <img src="{% static 'img/home/name.png' %}" alt="" />
           </div>
         </div>
       </div>

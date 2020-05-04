@@ -6,10 +6,10 @@
       <div class="col-md-3 col-sm-3">
         <div class="logo">
           <!-- Brand -->
-          <a class="navbar-brand page-scroll white-logo" href="index.html">
+          <a class="navbar-brand page-scroll white-logo" href="{% url 'index' %}">
             <img style="width: 100%; height: auto;" src="{% static 'img/logo/logo.png' %}" alt="" />
           </a>
-          <a class="navbar-brand page-scroll black-logo" href="index.html">
+          <a class="navbar-brand page-scroll black-logo" href="{% url 'index' %}">
             <img style="width: 100%; height: auto;" src="{% static 'img/logo/logo1.png' %}" alt="" />
           </a>
         </div>
@@ -89,7 +89,7 @@
           <div class="collapse navbar-collapse" id="navbar-example">
             <div class="main-menu">
               <ul class="nav navbar-nav navbar-right">
-                <li><a href="{% url 'index' %}">Trang chủ</a></li>
+                <li><a class="active" href="{% url 'index' %}">Trang chủ</a></li>
                 <li><a href="{% url 'about' %}">Giới thiệu</a></li>
                 <li>
                   <a href="{% url 'service' %}">Dịch vụ</a>
@@ -124,14 +124,11 @@
       <div class="col-md-12">
         <div class="mobile-menu">
           <div class="logo">
-            <a href="index.html"
-              ><img
-                style="width: 150px; height: 46px;"
-                src="{% static 'img/logo/logo.png' %}"
-                alt=""
-            /></a>
+            <a href="{% url 'index' %}"><img style="width: 150px; height: 46px;" src="{% static 'img/logo/logo.png' %}"
+                alt="" /></a>
           </div>
-          <nav id="dropdown">
+          <nav id="dropdown" class="dropdown">
+
             <ul>
               <li><a href="{% url 'index' %}">Home</a></li>
               <li><a href="{% url 'about' %}">About</a></li>
@@ -149,8 +146,11 @@
                   <li><a href="{% url 'blog2'">Blog Details</a></li>
                 </ul>
               </li>
-              <li><a href="contact.html">contacts</a></li>
-            </ul>
+              <li><a href="{% url 'contact' %}">contacts</a></li>
+                  <li><a href="/contact/#contact">Tư Vấn</a></li>
+                  <!-- <a type="button" id="openModal" class="s-menu" data-backdrop="false" data-toggle="modal"
+            data-target="#myModal">Tư vấn</a> -->
+                </ul>
           </nav>
         </div>
       </div>

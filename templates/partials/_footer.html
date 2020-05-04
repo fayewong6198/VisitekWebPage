@@ -8,9 +8,7 @@
           <div class="footer-content logo-footer">
             <div class="footer-head">
               <div class="footer-logo">
-                <a href="{% url 'index' %}"
-                  ><img src="{% static 'img/logo/logo.png' %}" alt=""
-                /></a>
+                <a href="{% url 'index' %}"><img src="{% static 'img/logo/logo.png' %}" alt="" /></a>
               </div>
               <p class="text-justify">
                 Visitek là một nhà cung cấp dịch vụ Công nghệ thông tin, chúng
@@ -21,12 +19,7 @@
               </p>
               <div class="subs-feilds">
                 <div class="suscribe-input">
-                  <input
-                    type="email"
-                    class="email form-control width-80"
-                    id="sus_email"
-                    placeholder="Nhập Email"
-                  />
+                  <input type="email" class="email form-control width-80" id="sus_email" placeholder="Nhập Email" />
                   <button type="submit" id="sus_submit" class="add-btn">
                     Subscribe
                   </button>
@@ -41,27 +34,23 @@
             <div class="footer-head">
               <h4>Dịch vụ</h4>
               <ul class="footer-list">
-                <li><a href="service-details.html">Thiết kế sản phẩm</a></li>
+                <li><a href="{% url 'detail_service' %}">Thiết kế sản phẩm</a></li>
                 <li>
-                  <a href="service-detail-manage.html">Quản trị hệ thống </a>
+                  <a href="{% url 'service_detail_manage' %}">Quản trị hệ thống </a>
                 </li>
                 <li>
-                  <a href="service-detail-security.html">Bảo mật hệ thống</a>
+                  <a href="{% url 'service_detail_security' %}">Bảo mật hệ thống</a>
                 </li>
                 <li>
-                  <a href="service-detail-repair.html">Bảo trì hệ thống </a>
+                  <a href="{% url 'service_detail_repair' %}">Bảo trì hệ thống </a>
                 </li>
               </ul>
               <ul class="footer-list hidden-sm">
                 <li>
-                  <a href="service-detail-outsource.html"
-                    >Dịch vụ IT OUTSOURCE</a
-                  >
+                  <a href="{% url 'service_detail_outsource' %}">Dịch vụ IT OUTSOURCE</a>
                 </li>
                 <li>
-                  <a href="service-detail-consult.html"
-                    >Tư vấn và triển khai hệ thống</a
-                  >
+                  <a href="{% url 'service_detail_consult' %}">Tư vấn và triển khai hệ thống</a>
                 </li>
               </ul>
             </div>
