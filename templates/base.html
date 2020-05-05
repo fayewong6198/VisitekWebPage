@@ -27,7 +27,19 @@
   </head>
   <body>
     <header class="header-one">
-      {% include 'partials/_header.html' %} {% include 'partials/_navbar.html'%}
+      {% for message in messages %}
+      <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="alert"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+        {{ message | safe }}
+      </div>
+      {% endfor %} {% include 'partials/_header.html' %} {% include 'partials/_navbar.html'%}
     </header>
 
     {% block content %} {% endblock %} {% include 'partials/_footer.html' %}

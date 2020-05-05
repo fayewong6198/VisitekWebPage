@@ -65,76 +65,38 @@
         <!-- Start Map -->
         <div class="map-area">
           <div id="googleMap">
-            <iframe
-              style="width: 100%; height: 370px;"
+            <iframe style="width: 100%; height: 390px;"
               src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d251637.95196238213!2d105.6189045!3d9.779349!3m2!1i1024!2i768!4f13.1!5e0!3m2!1svi!2s!4v1586758791770!5m2!1svi!2s"
-              frameborder="0"
-              style="border: 0;"
-              allowfullscreen=""
-              aria-hidden="false"
-              tabindex="0"
-            ></iframe>
+              frameborder="0" style="border: 0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
           </div>
         </div>
         <!-- End Map -->
       </div>
       <!-- Start Left contact -->
-      <div class="col-md-6 col-sm-6 col-xs-12">
+
+      <div class="col-md-6 col-sm-6 col-xs-12" id="contact">
         <div class="contact-form">
           <div class="row">
-            <form
-              id="contactForm1"
-              method="POST"
-              action="{% url 'contacts' %}"
-              class="contact-form"
-            >
+            <form id="contactForm1" method="POST" action="{% url 'contacts' %}" class="contact-form">
               {% csrf_token %}
               <div class="col-md-6 col-sm-6 col-xs-12">
-                <input
-                  type="text"
-                  id="name1"
-                  class="form-control"
-                  placeholder="Name"
-                  name="name"
-                  required
-                  data-error="Please enter your name"
-                />
+                <input type="text" id="name1" class="form-control" placeholder="Name" name="name" required
+                  data-error="Please enter your name" />
                 <div class="help-block with-errors"></div>
               </div>
               <div class="col-md-6 col-sm-6 col-xs-12">
-                <input
-                  type="email"
-                  name="email"
-                  class="email form-control"
-                  id="email1"
-                  placeholder="Email"
-                  required
-                  data-error="Please enter your email"
-                />
+                <input type="email" name="email" class="email form-control" id="email1" placeholder="Email" required
+                  data-error="Please enter your email" />
                 <div class="help-block with-errors"></div>
               </div>
               <div class="col-md-12 col-sm-12 col-xs-12">
-                <input
-                  type="text"
-                  id="msg_subject1"
-                  class="form-control"
-                  name="subject"
-                  placeholder="Subject"
-                  required
-                  data-error="Please enter your message subject"
-                />
+                <input type="text" id="msg_subject1" class="form-control" name="subject" placeholder="Subject" required
+                  data-error="Please enter your message subject" />
                 <div class="help-block with-errors"></div>
               </div>
               <div class="col-md-12 col-sm-12 col-xs-12">
-                <textarea
-                  id="message1"
-                  rows="7"
-                  name="message"
-                  placeholder="Massage"
-                  class="form-control"
-                  required
-                  data-error="Write your message"
-                ></textarea>
+                <textarea id="message1" rows="7" name="message" placeholder="Massage" class="form-control" required
+                  data-error="Write your message"></textarea>
                 <div class="help-block with-errors"></div>
               </div>
               <div class="col-md-12 col-sm-12 col-xs-12 text-center">
@@ -148,6 +110,7 @@
           </div>
         </div>
       </div>
+
       <!-- End Left contact -->
     </div>
   </div>

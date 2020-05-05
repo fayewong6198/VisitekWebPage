@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
 from .models import Contact
 from django.urls import reverse
+from django.contrib import messages
 # Create your views here.
 
 
@@ -17,7 +18,8 @@ def contact(request):
                           email=email, message=message)
         contact.save()
         print(request.path)
-        return HttpResponseRedirect(reverse('contact'))
+        messages.success(request, "Your message have been saved.")
+        return render(request, "pages/index.html")
 
     return redirect('/')
 
@@ -33,7 +35,7 @@ def consult(request):
         contact = Contact(name=name, subject=subject,
                           email=email, phone=phone, message=message)
         contact.save()
-        print(request.path)
-        return redirect('/')
+        messages.success(request, "Your message have been saved.")
+        return render(request, "pages/index.html")
 
     return redirect('/')

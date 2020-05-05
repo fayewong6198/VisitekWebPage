@@ -11,6 +11,9 @@
 .container-full {
   margin-top: 40px;
 }
+html {
+  scroll-behavior: smooth;
+}
 .flex {
   display: flex;
   justify-content: space-between;
@@ -1023,7 +1026,6 @@ div#preloader {
 /*----------------------------------------*/
 
 .about-2 {
-  background: url(../img/home/homeConsult.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
@@ -3356,6 +3358,7 @@ span.email-notes {
   padding: 40px 40px 40px;
   position: relative;
   z-index: 1;
+  height: 250px;
 }
 
 .contact-icon::after {
@@ -4220,6 +4223,7 @@ span.email-notes {
   .support-all .right-headline {
     margin-right: 0px;
   }
+
   .section-headline.right-headline h3 {
     font-size: 25px;
     line-height: 38px;
@@ -5010,7 +5014,7 @@ a.meanmenu-reveal {
   width: 30px;
 }
 .mean-container a.meanmenu-reveal span {
-  background: #fff none repeat scroll 0 0;
+  background: #333 none repeat scroll 0 0;
   display: block;
   height: 2px;
   margin-top: 5px;
@@ -5025,7 +5029,7 @@ a.meanmenu-reveal {
 .mean-container .mean-nav ul {
   padding: 0;
   margin: 0;
-  width: 100%;
+  width: 99%;
   list-style-type: none;
 }
 .mean-container .mean-nav ul li {
@@ -5049,8 +5053,17 @@ a.meanmenu-reveal {
   width: 90%;
   font-weight: bold;
 }
-.mobile-menu-area {
-  background: #8e55a3 none repeat scroll 0 0;
+
+.mean-container .mean-nav ul li li a {
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  opacity: 0.9;
+  padding: 1em 10%;
+  text-shadow: none !important;
+  visibility: visible;
+  width: 80%;
+  font-weight: 500;
+  text-transform: capitalize;
+  color: #444;
 }
 .mean-container .mean-nav ul li li a {
   border-top: 1px solid rgba(255, 255, 255, 0.25);
@@ -5088,7 +5101,6 @@ a.meanmenu-reveal {
   margin-top: 1px;
   padding: 18px 12px !important;
   text-align: center;
-<<<<<<< HEAD
   position: absolute;
   right: 0;
   top: 0;
@@ -5126,8 +5138,7 @@ a.meanmenu-reveal {
   content: "";
   font-size: 21px;
   left: 5%;
-=======
->>>>>>> 0c974cf972ad066c267225e3695daeda46ffbef8
+
   position: absolute;
   right: 0;
   top: 0;
@@ -6104,4 +6115,35 @@ img.mfp-img {
   }
 }
 
-/*  */
+/* responsive mobile contact */
+@media (max-width: 500px) {
+  #contact::before {
+    display: flex;
+    content: "Tư Vấn";
+    justify-content: center;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 4rem;
+    margin-top: 2rem;
+  }
+}
+@media (max-width: 800px) {
+  .mean-bar li a:hover {
+    background: rgba(153, 51, 153, 0.5) !important;
+    color: #fff !important;
+  }
+}
+.main-menu .nav li:hover {
+  background: rgba(19, 17, 19, 0.5) !important;
+}
+.sub-menu li a {
+  color: #4f4f57 !important;
+}
+.sub-menu li a:hover {
+  color: blueviolet !important;
+  background-color: #b9b4b4 !important;
+}
+.sub-menu {
+  background: rgb(201, 138, 238);
+}
