@@ -26,8 +26,8 @@
                                     </div>
                                     <!-- layer 3 -->
                                     <div class="layer-3 wow fadeInUp" data-wow-delay="0.7s">
-                                        <a href="services.html" class="ready-btn left-btn">Our Services</a>
-                                        <a href="contact.html" class="ready-btn right-btn">Contact us</a>
+                                        <a href="{% url 'service' %}" class="ready-btn left-btn">Our Services</a>
+                                        <a href="{% url 'contact' %}" class="ready-btn right-btn">Contact us</a>
                                     </div>
                                 </div>
                             </div>
@@ -61,8 +61,8 @@
                                     </div>
                                     <!-- layer 3 -->
                                     <div class="layer-3 wow fadeInUp" data-wow-delay="0.7s">
-                                        <a href="#" class="ready-btn left-btn">Our Services</a>
-                                        <a href="#" class="ready-btn right-btn">Contact us</a>
+                                        <a href="{% url 'service' %}" class="ready-btn left-btn">Our Services</a>
+                                        <a href="{% url 'contact' %}" class="ready-btn right-btn">Contact us</a>
                                     </div>
                                 </div>
                             </div>
@@ -564,7 +564,7 @@ position: relative;"> -->
 
                         <div class="single-blog">
                             <div class="blog-image">
-                                <a class="image-scale" href="#">
+                                <a class="image-scale" href="{% url 'blog1' blog.id %}">
                                     <img src="{{ blog.images.first }}" alt="">
                                 </a>
                             </div>

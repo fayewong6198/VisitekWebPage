@@ -1,12 +1,10 @@
-/*----------------------------------------------------------------------------------
-
+*----------------------------------------------------------------------------------
     Template Name: Randerc - It Solutions & Services HTML Template
     Template URI: http://rockstheme.com
     Description: This is html5 template
     Author: Rocks_theme
     Author URI: http://rockstheme.com
     Version: 1.0
-
 -----------------------------------------------------------------------------------*/
 .container-full {
   margin-top: 40px;
@@ -21,7 +19,6 @@ html {
 /*-----------------------------------------------------------------------------------  
      CSS INDEX
     ===================
-
     1. Theme Default CSS (body, link color, section etc)
     2. Header top Area
     2.1 Header Bottom Area 
@@ -52,8 +49,6 @@ html {
     25.Contact CSS
     26. Services Details area
     27. Project Details page
-
-
 -----------------------------------------------------------------------------------*/
 
 /*----------------------------------------*/
@@ -3589,7 +3584,6 @@ span.email-notes {
 /*.project-page-area .single-awesome-project {
     margin-bottom: 30px;
 }
-
 .hire-btn {
     background: #3078fb;
     padding: 10px 20px;
@@ -3601,37 +3595,30 @@ span.email-notes {
     border-radius: 3px;
     border: 1px solid #3078fb;
 }
-
 .hire-btn:hover {
     transition: 0.4s;
     background: #fff;
     color: #3078fb;
 }
-
 .project-page-area .project-menu li a {
     color: #2a354e;
 }
-
 .project-2-column .project-single {
     float: left;
     width: 50%;
 }
-
 .project-4-column .project-single {
     float: left;
     width: 25%;
 }
-
 .project-new h4 {
     color: #444;
     font-size: 24px;
     line-height: 34px;
 }
-
 .project-details h3 {
     font-size: 30px;
 }
-
 .project-carousel-2.owl-carousel.owl-theme .owl-controls .owl-nav div {
     background: #3078fb;
     border: 1px solid #3078fb;
@@ -3647,14 +3634,12 @@ span.email-notes {
     width: 40px;
     border-radius: 50%;
 }
-
 .project-carousel-2.owl-carousel.owl-theme .owl-controls .owl-nav div.owl-prev {
     top: 50%;
     position: absolute;
     left: 3%;
     margin-top: -30px;
 }
-
 .project-carousel-2.owl-carousel.owl-theme .owl-controls .owl-nav div.owl-prev:hover,
 .project-carousel-2.owl-carousel.owl-theme .owl-controls .owl-nav div.owl-next:hover {
     background: #fff;
@@ -3662,31 +3647,26 @@ span.email-notes {
     color: #3078fb;
     transition: all 0.5s ease 0s;
 }
-
 .project-carousel-2.owl-carousel.owl-theme .owl-controls .owl-nav div.owl-next {
     margin-top: -30px;
     position: absolute;
     right: 3%;
     top: 50%;
 }
-
 .project-history {
     background: #3078fb;
     padding: 30px;
     margin-bottom: 30px;
 }
-
 .project-details h4 {
     font-size: 22px;
 }
-
 .project-name ul li {
     color: #fff;
     font-size: 15px;
     line-height: 32px;
     margin: 10px 0px;
 }
-
 .project-name span {
     padding-right: 15px;
     min-width: 110px;
@@ -3694,17 +3674,14 @@ span.email-notes {
     font-weight: 500;
     font-size: 16px;
 }
-
 .project-inner {
     margin-bottom: 40px;
 }
-
 .project-details p {
     font-size: 15px;
     letter-spacing: 0.5px;
     margin-bottom: 25px;
 }
-
 .new-project {
     background: #f4f4f4;
     padding: 30px 30px 40px;
@@ -5505,7 +5482,6 @@ a.meanmenu-reveal {
          -o-animation: playload 1.4s steps(12) infinite;
             animation: playload 1.4s steps(12) infinite;
 }
-
 @-webkit-keyframes playload {
    from { background-position:    0px; }
      to { background-position: -384px; }
@@ -5547,7 +5523,6 @@ a.meanmenu-reveal {
          -o-animation: playload 1.4s steps(24) infinite;
             animation: playload 1.4s steps(24) infinite;
 }
-
 @-webkit-keyframes playload {
    from { background-position:    0px; }
      to { background-position: -768px; }
