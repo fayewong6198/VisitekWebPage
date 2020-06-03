@@ -10,6 +10,8 @@ class BlogImageAdmin(admin.ModelAdmin):
 
 class BlogImageInline(admin.StackedInline):
     model = BlogImage
+    #fields = ['image_tag']
+    #readonly_fields = ['image_tag']
     max_num = 20
     extra = 0
 

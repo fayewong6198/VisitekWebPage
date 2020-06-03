@@ -1,5 +1,4 @@
 {% extends 'base.html' %} {% load static %} {% block content%}
-<!-- Start Bottom Header -->
 <div class="page-area">
   <div class="breadcumb-overlay"></div>
   <div class="container">
@@ -25,11 +24,9 @@
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="section-headline text-center">
-          <h3>Dịch vụ chuyên nghiệp</h3>
-          <p>
-            Giúp bạn có thể tiếp cận được với chuyên gia có khả năng và kinh
-            nghiệm.
-          </p>
+
+          <h3 title="Dịch vụ chuyên nghiệp">Dịch vụ chuyên nghiệp</h3>
+          <p>Giúp bạn có thể tiếp cận được với chuyên gia có khả năng và kinh nghiệm.</p>
         </div>
       </div>
     </div>
@@ -37,90 +34,39 @@
       <div class="all-services">
         <!-- single dervices -->
         <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="single-service wow fadeInUp" data-wow-delay="0.3s">
+          <div class="single-service wow fadeInUp" data-wow-delay="0.3s"
+            style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
             <div class="service-icon">
-              <span class="flaticon-052-project-plan"></span>
+              <a title="Logo dịch vụ thiết kế sản phẩm" href="service-details.html"><span href=""
+                  class="flaticon-052-project-plan"></span></a>
             </div>
             <div class="service-inner">
               <div class="service-content">
-                <h4>Thiết kế sản phẩm</h4>
-                <p>
-                  Chúng tôi giúp cho sự hiện diện trực tuyến của bạn trở nên
-                  tuyệt vời.
-                </p>
-                <a class="service-btn" href="{% url 'detail_service' %}"><i class="ti-arrow-right"></i></a>
+                <h4 href="service-details.html"><a title="Dịch vụ thiết kế sản phẩm" href="service-details.html">Thiết
+                    kế sản phẩm
+                  </a></h4>
+                <p>Chúng tôi giúp cho sự hiện diện trực tuyến của bạn trở nên tuyệt vời.</p>
+                <a title="Xem chi tiết dịch vụ thiết kế sản phẩm" class="service-btn"
+                  href="service-detail-repair.html"><i class="ti-arrow-right"></i></a>
               </div>
             </div>
           </div>
         </div>
         <!-- single dervices -->
         <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="single-service wow fadeInUp" data-wow-delay="0.5s">
+          <div class="single-service wow fadeInUp" data-wow-delay="0.5s"
+            style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
             <div class="service-icon">
-              <span class="flaticon-031-financial"></span>
+              <a title="Logo dịch vụ bảo trì hệ thống" href="service-detail-repair.html"><span
+                  href="service-detail-repair.html" class="flaticon-031-financial"></span></a>
             </div>
             <div class="service-inner">
               <div class="service-content">
-                <h4>Bảo trì hệ thống</h4>
-                <p>
-                  Hệ thống CNTT của doanh nghiệp chạy trơn tru hơn và ít khả
-                  năng bị gián đoạn.
-                </p>
-                <a class="service-btn" href="{% url 'service_detail_repair' %}"><i class="ti-arrow-right"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- single dervices -->
-        <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="single-service wow fadeInUp" data-wow-delay="0.7s">
-            <div class="service-icon">
-              <span class="flaticon-057-statistics"></span>
-            </div>
-            <div class="service-inner">
-              <div class="service-content">
-                <h4>Bảo mật hệ thống</h4>
-                <p>
-                  Hãy chắc chắn rằng doanh nghiệp của bạn đã được bảo vệ an toàn
-                  !
-                </p>
-                <a class="service-btn" href="{% url 'service_detail_security' %}"><i class="ti-arrow-right"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- single dervices -->
-        <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="single-service wow fadeInUp" data-wow-delay="0.3s">
-            <div class="service-icon">
-              <span class="flaticon-012-business"></span>
-            </div>
-            <div class="service-inner">
-              <div class="service-content">
-                <h4>Tư vấn và triển khai hệ thống</h4>
-                <p>
-                  Giúp doanh nghiệp hoạt động hiệu quả và cuối cùng là đạt được
-                  lợi nhuận trong kinh doanh.
-                </p>
-                <a class="service-btn" href="{% url 'service_detail_consult' %}"><i class="ti-arrow-right"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- single dervices -->
-        <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="single-service wow fadeInUp" data-wow-delay="0.5s">
-            <div class="service-icon">
-              <span class="flaticon-041-network"></span>
-            </div>
-            <div class="service-inner">
-              <div class="service-content">
-                <h4>Dịch vụ IT OUTSOURCE</h4>
-                <p>
-                  Các doanh nghiệp giao công việc liên quan tới công nghệ thông
-                  tin cho một bên thứ ba cung cấp dịch vụ này.
-                </p>
-                <a class="service-btn" href="{% url 'service_detail_outsource' %}"><i class="ti-arrow-right"></i></a>
+                <h4><a title="Dịch vụ bảo trì hệ thống" href="service-detail-repair.html">Bảo trì hệ
+                    thống</a></h4>
+                <p>Hệ thống CNTT của doanh nghiệp chạy trơn tru hơn và ít khả năng bị gián đoạn.</p>
+                <a title="Xem chi tiết dịch vụ bảo trì hệ thống" class="service-btn"
+                  href="service-detail-repair.html"><i class="ti-arrow-right"></i></a>
               </div>
             </div>
           </div>
@@ -129,17 +75,73 @@
         <div class="col-md-4 col-sm-6 col-xs-12">
           <div class="single-service wow fadeInUp" data-wow-delay="0.7s">
             <div class="service-icon">
-              <span class="flaticon-002-analysis"></span>
+              <a title="Logo dịch vụ bảo mật hệ thống" href="service-detail-security.html"><span
+                  class="flaticon-057-statistics"></span></a>
             </div>
             <div class="service-inner">
               <div class="service-content">
-                <h4>Quản trị hệ thống</h4>
-                <p>
-                  Giúp loại bỏ sự khó khăn của bạn về hệ thống và để chúng tôi
-                  hỗ trợ , phát triển công việc của bạn : thu hút khách hàng và
-                  phát triển công việc kinh doanh.
-                </p>
-                <a class="service-btn" href="{% url 'service_detail_manage' %}"><i class="ti-arrow-right"></i></a>
+                <h4><a title="Dịch vụ bảo mật hệ thống" href="service-detail-security.html">Bảo mật
+                    hệ thống</a></h4>
+                <p>Hãy chắc chắn rằng doanh nghiệp của bạn đã được bảo vệ an toàn !</p>
+                <a title="Xem chi tiết dịch vụ bảo mật hệ thống" class="service-btn"
+                  href="service-detail-repair.html"><i class="ti-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- single dervices -->
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <div class="single-service wow fadeInUp" data-wow-delay="0.3s">
+            <div class="service-icon">
+              <a title="Logo dịch vụ tư vấn và triển khai hệ thống" href="service-detail-consult.html"><span
+                  class="flaticon-012-business"></span></a>
+            </div>
+            <div class="service-inner">
+              <div class="service-content">
+                <h4><a title="Dịch vụ tư vấn và triển khai hệ thống" href="service-detail-consult.html">Tư vấn và
+                    triển khai hệ thống</a></h4>
+                <p>Giúp doanh nghiệp hoạt động hiệu quả và cuối cùng là đạt được lợi nhuận trong
+                  kinh doanh.</p>
+                <a title="Xem chi tiết dịch vụ tư vấn và triển khai hệ thống" class="service-btn"
+                  href="service-detail-repair.html"><i class="ti-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- single dervices -->
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <div class="single-service wow fadeInUp" data-wow-delay="0.5s">
+            <div class="service-icon">
+              <a title="Logo dịch vụ IT OUTSOURCE" href="service-detail-outsource.html"><span
+                  href="service-detail-outsource.html" class="flaticon-041-network"></span></a>
+            </div>
+            <div class="service-inner">
+              <div class="service-content">
+                <h4><a title="Dịch vụ IT OUTSOURCE" href="service-detail-outsource.html">Dịch vụ IT
+                    OUTSOURCE</a></h4>
+                <p>Các doanh nghiệp giao công việc liên quan tới công nghệ thông tin cho một bên thứ
+                  ba cung cấp dịch vụ này.</p>
+                <a title="Xem chi tiết dịch vụ IT OUTSOURCE" class="service-btn" href="service-detail-repair.html"><i
+                    class="ti-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- single dervices -->
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <div class="single-service wow fadeInUp" data-wow-delay="0.7s">
+            <div class="service-icon">
+              <a title="Logo dịch vụ quản trị hệ thống" href="service-detail-manage.html"><span
+                  class="flaticon-002-analysis"></span></a>
+            </div>
+            <div class="service-inner">
+              <div class="service-content">
+                <h4><a title="Dịch vụ quản trị hệ thống" href="service-detail-manage.html">Quản trị
+                    hệ thống</a></h4>
+                <p>Giúp loại bỏ sự khó khăn của bạn về hệ thống và để chúng tôi hỗ trợ , phát triển
+                  công việc của bạn : thu hút khách hàng và phát triển công việc kinh doanh.</p>
+                <a title="Xem chi tiết dịch vụ quản trị hệ thống" class="service-btn"
+                  href="service-detail-repair.html"><i class="ti-arrow-right"></i></a>
               </div>
             </div>
           </div>
@@ -159,15 +161,16 @@
           <!-- Start Nav tabs -->
           <ul class="nav nav-tabs" role="tablist">
             <li class="active">
-              <a href="#p-view-1" role="tab" data-toggle="tab">
+              <a title="Dịch vụ quản trị hệ thống" href="#p-view-1" role="tab" data-toggle="tab">
                 <span class="cha-title">Bảo trì hệ thống</span>
               </a>
             </li>
             <li>
-              <a href="#p-view-2" role="tab" data-toggle="tab">
+              <a title="Tư vấn khách hàng" href="#p-view-2" role="tab" data-toggle="tab">
                 <span class="cha-title">Tư vấn khách hàng</span>
               </a>
             </li>
+
           </ul>
           <!-- End Nav tabs -->
         </div>
@@ -180,35 +183,28 @@
               <div class="single-machine row">
                 <div class="col-md-6 col-sm-6 col-xs-12">
                   <div class="tabe-img">
-                    <img src="{% static 'img/home/home3.png' %}" alt="" />
+                    <img src="{% static 'img/home/home3.png' %}" alt="Hình ảnh bảo trì hệ thống">
                   </div>
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-12">
                   <div class="machine-text">
-                    <h3>Bảo trì hệ thống</h3>
-                    <p>
-                      Bảo vệ, hạn chế tối đa những sự cố của hệ thống, điều này
-                      có thể làm tăng năng suất hoạt động và lợi nhuận của khách
-                      hàng. Cảnh báo về những sự cố có thể xảy ra trong một thời
-                      gian ngắn để doanh nghiệp có phương án dự phòng , bảo đảm
-                      quản lý hệ thống vận hành ở hiệu suất cao nhất. Đảm bảo
-                      thiết bị thay thế khi hệ thống gặp sự cố mà không khắc
-                      phục được. Phần mềm được kiểm tra, backup dữ liệu và các
-                      tiện ích mới của phần mềm hệ thống.
-                    </p>
+                    <h3 title="Bảo trì hệ thống của công ty Visitek">Bảo trì hệ thống</h3>
+                    <p>Bảo vệ, hạn chế tối đa những sự cố của hệ thống, điều này có thể làm tăng
+                      năng suất hoạt động và lợi nhuận của khách hàng. Cảnh báo về những sự cố
+                      có thể xảy ra trong một thời gian ngắn để doanh nghiệp có phương án dự
+                      phòng , bảo đảm quản lý hệ thống vận hành ở hiệu suất cao nhất. Đảm bảo
+                      thiết bị thay thế khi hệ thống gặp sự cố mà không khắc phục được. Phần
+                      mềm được kiểm tra, backup dữ liệu và các tiện ích mới của phần mềm hệ
+                      thống.</p>
                     <ul>
-                      <li>
-                        <a href="#">Innovation idea latest business tecnology</a>
+                      <li><a>Ý tưởng đổi mới công nghệ kinh doanh mới nhất</a></li>
+                      <li><a>Tiếp thị nội dung số nền tảng khách hàng trực tuyến
+                        </a>
                       </li>
-                      <li>
-                        <a href="#">Digital content marketing online clients plateform</a>
+                      <li><a>Dịch vụ bảo mật an toàn cho tài khoản email trực tuyến của
+                          bạn</a>
                       </li>
-                      <li>
-                        <a href="#">Safe secure services for you online email account</a>
-                      </li>
-                      <li>
-                        <a href="#">Innovation idea latest business tecnology</a>
-                      </li>
+
                     </ul>
                   </div>
                 </div>
@@ -221,45 +217,33 @@
               <div class="single-machine row">
                 <div class="col-md-6 col-sm-6 col-xs-12">
                   <div class="tabe-img">
-                    <img src="{% static 'img/home/home4.png' %}" alt="" />
+                    <img src="{% static 'img/home/home4.png' %}" alt="Hình ảnh tư vấn khách hàng">
                   </div>
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-12">
                   <div class="machine-text">
-                    <h3>Tư vấn khách hàng</h3>
-                    <p>
-                      Đội ngũ chuyên nghiệp trong lĩnh vực công nghệ thông tin
-                      hỗ trợ và tư vấn trong việc lựa chọn công nghệ mới giúp
-                      hạn chế rủi ro trong việc đẩu tư và khai thác tối đa hiệu
-                      suất của sản phẩm trong phạm vi cho phép
-                    </p>
+                    <h3 title="Tư vấn khách hàng của công ty Visitek">Tư vấn khách hàng</h3>
+                    <p>Đội ngũ chuyên nghiệp trong lĩnh vực công nghệ thông tin hỗ trợ và tư vấn
+                      trong việc lựa chọn công nghệ mới giúp hạn chế rủi ro trong việc đẩu tư
+                      và khai thác tối đa hiệu suất của sản phẩm trong phạm vi cho phép</p>
                     <ul>
-                      <li>
-                        <a href="#">Innovation idea latest business tecnology</a>
+                      <li><a>Ý tưởng đổi mới công nghệ kinh doanh mới nhất</a></li>
+                      <li><a>Tiếp thị nội dung số nền tảng khách hàng trực tuyến
+                        </a>
                       </li>
-                      <li>
-                        <a href="#">Digital content marketing online clients plateform</a>
-                      </li>
-                      <li>
-                        <a href="#">Safe secure services for you online email account</a>
-                      </li>
-                      <li>
-                        <a href="#">Innovation idea latest business tecnology</a>
-                      </li>
+
+                      <li><a>Dịch vụ bảo mật an toàn cho tài khoản email trực tuyến của
+                          bạn</a></li>
                     </ul>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <!--Start Tab Content -->
-
-          <!--Start Tab Content -->
         </div>
       </div>
     </div>
     <!-- end Row -->
   </div>
 </div>
-<!-- End Tab end -->
 {% endblock %}

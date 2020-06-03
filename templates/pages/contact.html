@@ -1,17 +1,17 @@
 {% extends 'base.html' %} {% load static %} {% block content%}
 <!-- Start Bottom Header -->
-<div class="page-area">
+<div class="page-area-contact">
   <div class="breadcumb-overlay"></div>
   <div class="container">
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="breadcrumb text-center">
           <div class="section-headline white-headline text-center">
-            <h3>Liên lạc</h3>
+            <h3>Liên Hệ</h3>
           </div>
           <ul>
             <li class="home-bread">Trang chủ</li>
-            <li>Liên lạc</li>
+            <li>Liên Hệ</li>
           </ul>
         </div>
       </div>
@@ -29,8 +29,8 @@
           <div class="contact-icon text-center">
             <div class="single-icon">
               <i class="ti-mobile"></i>
-              <p>
-                Tel : 0584243459
+              <p title="Visitek phone">
+                Tel : 0567055912
               </p>
             </div>
           </div>
@@ -40,7 +40,7 @@
           <div class="contact-icon text-center">
             <div class="single-icon">
               <i class="ti-email"></i>
-              <p>
+              <p title="Visitek gmail">
                 Email : Visitekvn@gmail.com
               </p>
             </div>
@@ -51,9 +51,8 @@
           <div class="contact-icon text-center">
             <div class="single-icon">
               <i class="ti-location-pin"></i>
-              <p>
-                Địa chỉ: 86 đường số 7, phường 7, khu Cityland Center Hills, Gò
-                Vấp, TP.HCM
+              <p title="Visitek địa chỉ">
+                Địa chỉ: 86 đường số 7, phường 7, khu Cityland Center Hills, Gò Vấp, TP.HCM
               </p>
             </div>
           </div>
@@ -65,52 +64,54 @@
         <!-- Start Map -->
         <div class="map-area">
           <div id="googleMap">
-            <iframe style="width: 100%; height: 390px;"
-              src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d251637.95196238213!2d105.6189045!3d9.779349!3m2!1i1024!2i768!4f13.1!5e0!3m2!1svi!2s!4v1586758791770!5m2!1svi!2s"
-              frameborder="0" style="border: 0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            <a title="Visitek googleMap"
+              href="https://www.google.com/maps/place/%C4%90%C6%B0%E1%BB%9Dng+s%E1%BB%91+7,+Ph%C6%B0%E1%BB%9Dng+7,+G%C3%B2+V%E1%BA%A5p,+H%E1%BB%93+Ch%C3%AD+Minh,+Vi%E1%BB%87t+Nam/@10.8291346,106.6787195,17z/data=!3m1!4b1!4m5!3m4!1s0x317528febb305a5d:0xe8cf6c558f81bdb!8m2!3d10.8291176!4d106.680783?hl=vi-VN"><iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.7670027496483!2d106.6787195143707!3d10.829134592285763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528febb305a5d%3A0xe8cf6c558f81bdb!2zxJDGsOG7nW5nIHPhu5EgNywgUGjGsOG7nW5nIDcsIEfDsiBW4bqlcCwgSOG7kyBDaMOtIE1pbmgsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1589777261355!5m2!1svi!2s"
+                width="100%" height="445" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                tabindex="0"></iframe></a>
           </div>
         </div>
         <!-- End Map -->
       </div>
       <!-- Start Left contact -->
-
-      <div class="col-md-6 col-sm-6 col-xs-12" id="contact">
+      <div class="col-md-6 col-sm-6 col-xs-12">
         <div class="contact-form">
           <div class="row">
-            <form id="contactForm1" method="POST" action="{% url 'contacts' %}" class="contact-form">
-              {% csrf_token %}
+            <form id="contactForm" method="POST" class="contact-form">
               <div class="col-md-6 col-sm-6 col-xs-12">
-                <input type="text" id="name1" class="form-control" placeholder="Name" name="name" required
-                  data-error="Please enter your name" />
+                <input type="text" id="name" class="form-control" placeholder="Nhập tên" required
+                  data-error="Please enter your name">
                 <div class="help-block with-errors"></div>
               </div>
               <div class="col-md-6 col-sm-6 col-xs-12">
-                <input type="email" name="email" class="email form-control" id="email1" placeholder="Email" required
-                  data-error="Please enter your email" />
+                <input type="text" id="name" class="form-control" placeholder="Số điện thoại" required
+                  data-error="Please enter your phone">
                 <div class="help-block with-errors"></div>
               </div>
               <div class="col-md-12 col-sm-12 col-xs-12">
-                <input type="text" id="msg_subject1" class="form-control" name="subject" placeholder="Subject" required
-                  data-error="Please enter your message subject" />
+                <input type="email" class="email form-control" id="email" placeholder="Email" required
+                  data-error="Please enter your email">
                 <div class="help-block with-errors"></div>
               </div>
               <div class="col-md-12 col-sm-12 col-xs-12">
-                <textarea id="message1" rows="7" name="message" placeholder="Massage" class="form-control" required
+                <input type="text" id="msg_subject" class="form-control" placeholder="Tiêu đề" required
+                  data-error="Please enter your message subject">
+                <div class="help-block with-errors"></div>
+              </div>
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <textarea id="message" rows="7" placeholder="Nội dung" class="form-control" required
                   data-error="Write your message"></textarea>
                 <div class="help-block with-errors"></div>
               </div>
               <div class="col-md-12 col-sm-12 col-xs-12 text-center">
-                <button type="submit" id="ssubmit1" class="add-btn contact-btn">
-                  Send Message
-                </button>
-                <div id="msgSubmit1" class="h3 text-center hidden"></div>
+                <button type="submit" id="submit" class="add-btn contact-btn">Gửi tin nhắn</button>
+                <div id="msgSubmit" class="h3 text-center hidden"></div>
                 <div class="clearfix"></div>
               </div>
             </form>
           </div>
         </div>
       </div>
-
       <!-- End Left contact -->
     </div>
   </div>

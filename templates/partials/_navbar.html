@@ -6,11 +6,11 @@
       <div class="col-md-3 col-sm-3">
         <div class="logo">
           <!-- Brand -->
-          <a class="navbar-brand page-scroll white-logo" href="{% url 'index' %}">
-            <img style="width: 100%; height: auto;" src="{% static 'img/logo/logo.png' %}" alt="" />
+          <a title="Visitek Logo" class="navbar-brand page-scroll white-logo" href="/">
+            <img style="width: 100%; height: auto;" src="{% static 'img/logo/logo.png' %}" alt="Visitek Logo Page">
           </a>
-          <a class="navbar-brand page-scroll black-logo" href="{% url 'index' %}">
-            <img style="width: 100%; height: auto;" src="{% static 'img/logo/logo1.png' %}" alt="" />
+          <a title="Visitek Logo" class="navbar-brand page-scroll black-logo" href="/">
+            <img style="width: 100%; height: auto;" src="{% static 'img/logo/logo1.png' %}" alt="Visitek Logo Page">
           </a>
         </div>
         <!-- logo end -->
@@ -18,159 +18,103 @@
       <div class="col-md-9 col-sm-9">
         <div class="header-right-link">
           <!-- search option start -->
-          <div class="search-inner">
-            <form action="#">
-              <div class="search-option" style="display: none;">
-                <input type="text" placeholder="Search..." />
-                <button class="button" type="submit">
+          <div class="dropdown show" style="display: inline-block; float: left;">
+            <a title="Visitek tìm kiếm" class="btn btn-secondary dropdown-toggle" href="#" role="button"
+              id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fa fa-search" style="font-size: 2rem;"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right " aria-labelledby="dropdownMenuLink">
+              <div class="dropdown-items">
+                <input type="text" placeholder="Search..." class="input-search" />
+                <button class="btn-search" type="submit">
                   <i class="fa fa-search"></i>
-                </button>
               </div>
-              <a class="main-search" href="#"><i class="fa fa-search"></i></a>
-            </form>
+            </div>
+
           </div>
-          <a
-            type="button"
-            id="openModal"
-            class="s-menu"
-            data-backdrop="false"
-            data-toggle="modal"
-            data-target="#myModal"
-            >Tư vấn</a
-          >
+          <a title="Visitek tư vấn" type="button" id="openModal" class="s-menu my-5" data-backdrop="false"
+            data-toggle="modal" data-target="#myModal">Tư vấn</a>
           <!-- Start Left contact -->
           <div class="modal fade" id="myModal">
             <div class="modal-dialog" id="2">
               <div class="modal-content" id="3">
                 <h4 style="text-align: center;">
-                  <button
-                    style="width: 40px; height: 40px;"
-                    type="button"
-                    class="close"
-                    data-dismiss="modal"
-                  >
-                    &times;
-                  </button>
+                  <button style="width: 40px; height: 40px;" type="button" class="close"
+                    data-dismiss="modal">&times;</button>
                   Để lại lời nhắn
                 </h4>
-                <form
-                  id="contactFormConsult"
-                  class="contact-form"
-                  action="{% url 'consults' %}"
-                  method="POST"
-                >
-                  {% csrf_token %}
-                  <div
-                    class="col-md-6 col-sm-6 col-xs-6 m-2"
-                    class="contentBox"
-                  >
-                    <input
-                      type="text"
-                      id="name"
-                      name="name1"
-                      class="form-control"
-                      placeholder="Full Name"
-                      required
-                      data-error="Please enter your name"
-                      style="margin-top: 25px;"
-                    />
+                <form id="contactForm" class="contact-form">
+                  <div class="col-md-6 col-sm-6 col-xs-6 m-2" id="contentBox">
+                    <input type="text" id="name" class="form-control" placeholder="Nhập tên" required
+                      data-error="Please enter your name">
                     <div class="help-block with-errors"></div>
                   </div>
-                  <div class="col-md-6 col-sm-6 col-xs-6" class="contentBox">
-                    <input
-                      type="text"
-                      name="phone1"
-                      class="form-control"
-                      id="phone"
-                      placeholder="Phone Number"
-                      required
-                      data-error="Please enter your email"
-                      style="margin-top: 25px;"
-                    />
+                  <div class="col-md-6 col-sm-6 col-xs-6" id="contentBox">
+                    <input type="text" class="email form-control" id="email" placeholder="Số điện thoại" required
+                      data-error="Please enter your email">
                     <div class="help-block with-errors"></div>
                   </div>
                   <div class="col-md-12 col-sm-12 col-xs-12">
-                    <input
-                      type="text"
-                      name="email1"
-                      id="email"
-                      class="form-control"
-                      placeholder="Mail@gmail.com"
-                      required
-                      data-error="Please enter your message subject"
-                    />
+                    <input type="text" id="msg_subject" class="form-control" placeholder="example@gmail.com" required
+                      data-error="Please enter your message subject">
                     <div class="help-block with-errors"></div>
                   </div>
                   <div class="col-md-12 col-sm-12 col-xs-12">
-                    <input
-                      type="text"
-                      name="subject1"
-                      id="msg_subject"
-                      class="form-control"
-                      placeholder="Subject"
-                      required
-                      data-error="Please enter your message subject"
-                    />
+                    <input type="text" id="msg_subject" class="form-control" placeholder="Tiêu đề" required
+                      data-error="Please enter your message subject">
                     <div class="help-block with-errors"></div>
                   </div>
                   <div class="col-md-12 col-sm-12 col-xs-12">
-                    <textarea
-                      id="message"
-                      name="message1"
-                      rows="7"
-                      placeholder="Massage"
-                      class="form-control"
-                      required
-                      data-error="Write your message"
-                    ></textarea>
+                    <textarea id="message" rows="7" placeholder="Nội dung" class="form-control" required
+                      data-error="Write your message"></textarea>
                     <div class="help-block with-errors"></div>
                   </div>
                   <div class="modal-footer">
                     <div class="col-md-12 col-sm-12 col-xs-12 text-center">
-                      <button
-                        style="margin-bottom: 5px;"
-                        type="submit"
-                        id="submitsdfghjkl;"
-                        class="add-btn contact-btn"
-                      >
-                        Gửi tin nhắn
-                      </button>
-                      <div
-                        id="msgSubmitghdcjvkbl"
-                        class="h3 text-center hidden"
-                      ></div>
+                      <button style="margin-bottom: 5px;" type="submit" id="submit" class="add-btn contact-btn">Gửi tin
+                        nhắn</button>
+                      <div id="msgSubmit" class="h3 text-center hidden"></div>
                       <div class="clearfix"></div>
                     </div>
                   </div>
                 </form>
               </div>
             </div>
-          </div>
-          <!-- End Left contact -->
+          </div><!-- End Left contact -->
         </div>
         <!-- mainmenu start -->
         <nav class="navbar navbar-default">
           <div class="collapse navbar-collapse" id="navbar-example">
-            <div class="main-menu">
+            <div class="main-menu" id="croll-menu">
               <ul class="nav navbar-nav navbar-right">
-                <li><a class="active" href="{% url 'index' %}">Trang chủ</a></li>
-                <li><a href="{% url 'about' %}">Giới thiệu</a></li>
-                <li>
-                  <a href="{% url 'service' %}">Dịch vụ</a>
+                <li><a title="Visitek trang chủ" href="/">Trang chủ</a>
+                </li>
+                <li><a title="Visitek giới thiệu" href="/about">Giới thiệu</a>
+                </li>
+                <li><a title="Visitek dịch vụ" href="/services">Dịch vụ</a>
                   <ul class="sub-menu">
-                    <li>
-                      <a href="{% url 'detail_service' %}">Chi tiết dịch vụ</a>
+                    <li><a title="Visitek dịch vụ thiết kế sản phẩm" href="/service-details">Thiết Kế Sản Phẩm</a>
                     </li>
+                    <li><a title="Visitek dịch vụ bảo mật hệ thống" href="/service-detail-security">Bảo Mật Hệ
+                        Thống</a></li>
+                    <li><a title="Visitek dịch vụ quản trị hệ thống" href="/service-detail-manage">Quản Trị Hệ
+                        Thống</a></li>
+                    <li><a title="Visitek dịch vụ triển khai hệ thống" href="/service-detail-consult">Triển Khai Hệ
+                        Thống</a>
+                    </li>
+                    <li><a title="Visitek dịch vụ IT OUTSOURCE" href="/service-detail-outsource">IT OutSource</a>
+                    </li>
+                    <li><a title="Visitek dịch vụ bảo trì hệ thống" href="/service-detail-repair">Bảo Trì Hệ
+                        Thống</a></li>
                   </ul>
                 </li>
-                <li>
-                  <a href="{% url 'blog' %}">Blog</a>
-                  <ul class="sub-menu">
-                    <li><a href="{% url 'blog1' 1 %}">Blog 1</a></li>
-                    <li><a href="{% url 'blog2' %}">Blog 2</a></li>
-                  </ul>
-                </li>
-                <li><a href="{% url 'contact' %}">Liên lạc</a></li>
+                <!-- <li><a href="blog.html">Blog</a>
+                                  <ul class="sub-menu">
+                                      <li><a href="blog-sidebar.html">Blog List</a></li>
+                                      <li><a href="blog-details.html">Blog Details</a></li>
+                                  </ul>
+                              </li> -->
+                <li><a title="Visitek Liên hệ" href="/contact">Liên Hệ</a></li>
               </ul>
             </div>
           </div>
@@ -182,48 +126,48 @@
 </div>
 <!-- header-area end -->
 <!-- mobile-menu-area start -->
-<div
-  class="mobile-menu-area hidden-lg hidden-md hidden-sm"
-  style="background: #fff;"
->
+<div class="mobile-menu-area hidden-lg hidden-md hidden-sm">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
         <div class="mobile-menu">
           <div class="logo">
-            <a href="{% url 'index' %}"><img style="width: 150px; height: 46px;" src="{% static 'img/logo/logo.png' %}"
-                alt="" /></a>
+            <a title="Visitek logo mobile" href="/"><img src="{% static 'img/logo/logo1.png' %}"
+                alt="Visitek logo mobile" /></a>
           </div>
-          <nav id="dropdown" class="dropdown">
-
-            <ul>
-              <li><a href="{% url 'index' %}">Home</a></li>
-              <li><a href="{% url 'about' %}">About</a></li>
-              <li>
-                <a class="pages" href="{% url 'service' %}">Services</a>
+          <nav id="dropdown">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a title="Visitek trang chủ mobile" href="/">Trang chủ</a>
+              </li>
+              <li><a title="Visitek giới thiệu mobile" href="/about">Giới thiệu</a>
+              </li>
+              <li><a title="Visitek dịch vụ mobile" href="/services">Dịch vụ</a>
                 <ul class="sub-menu">
-                  <li>
-                    <a href="{% url 'detail_service' %}">Service Details</a>
+                  <li><a title="Visitek dịch vụ thiết kế sản phẩm mobile" href="/service-details">Thiết Kế Sản
+                      Phẩm</a></li>
+                  <li><a title="Visitek dịch vụ bảo mật hệ thống mobile" href="/service-detail-security">Bảo Mật Hệ
+                      Thống</a></li>
+                  <li><a title="Visitek dịch vụ quản trị hệ thống mobile" href="/service-detail-manage">Quản Trị Hệ
+                      Thống</a></li>
+                  <li><a title="Visitek dịch vụ triển khai hệ thống mobile" href="/service-detail-consult">Triển
+                      Khai Hệ
+                      Thống</a>
                   </li>
+                  <li><a title="Visitek dịch vụ IT OUTSOURCE  mobile" href="/service-detail-outsource"> IT
+                      OUTSOURCE</a>
+                  </li>
+                  <li><a title="Visitek dịch vụ bảo trì hệ thống mobile" href="/service-detail-repair">Bảo Trì Hệ
+                      Thống</a></li>
                 </ul>
               </li>
-              <li>
-                <a class="pages" href="{% url 'blog' %}">Blog</a>
-                <ul class="sub-menu">
-                  <li><a href="{% url 'blog' %}">Blog grid</a></li>
-                  <li><a href="{% url 'blog1'">Blog List</a></li>
-                  <li><a href="{% url 'blog2'">Blog Details</a></li>
-                </ul>
-              </li>
-              <li><a href="{% url 'contact' %}">contacts</a></li>
-                  <li><a href="/contact/#contact">Tư Vấn</a></li>
-                  <!-- <a type="button" id="openModal" class="s-menu" data-backdrop="false" data-toggle="modal"
-            data-target="#myModal">Tư vấn</a> -->
-                </ul>
+
+              <li><a title="Visitek Liên hệ mobile" href="/contact">Liên Hệ</a></li>
+            </ul>
           </nav>
         </div>
       </div>
     </div>
   </div>
 </div>
+
 <!-- mobile-menu-area end -->

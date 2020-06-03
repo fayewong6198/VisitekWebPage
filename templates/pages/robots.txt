@@ -1,0 +1,9 @@
+user-agent: feedjira
+disallow: /
+
+user-agent: magie-crawler
+disallow: /
+
+user-agent: *
+allow: /
+

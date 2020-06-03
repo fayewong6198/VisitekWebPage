@@ -1,11 +1,12 @@
 from django.db import models
 from datetime import datetime
+from tinymce import HTMLField
 # Create your models here.
 
 
 class Blog(models.Model):
     title = models.CharField(max_length=255)
-    content = models.TextField()
+    content = HTMLField('Content')
     category = models.CharField(max_length=255, default='Business')
     created_at = models.DateField(default=datetime.now)
 

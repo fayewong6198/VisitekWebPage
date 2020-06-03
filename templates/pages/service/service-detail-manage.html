@@ -1,5 +1,8 @@
 {% extends 'base.html' %} {% load static %} {% block content%}
 <!-- Start Bottom Header -->
+
+
+<!-- Start service page -->
 <div class="page-area">
   <div class="breadcumb-overlay"></div>
   <div class="container">
@@ -7,11 +10,11 @@
       <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="breadcrumb text-center">
           <div class="section-headline white-headline text-center">
-            <h3>Chi Tiết Dịch Vụ</h3>
+            <h3>Quản trị hệ thống</h3>
           </div>
           <ul>
             <li class="home-bread">Home</li>
-            <li>Chi Tiết Dịch Vụ</li>
+            <li>Quản trị hệ thống</li>
           </ul>
         </div>
       </div>
@@ -24,39 +27,30 @@
   <div class="container">
     <div class="row">
       {% include 'partials/_leftbar.html' %}
+      <!-- End left sidebar -->
       <!-- Start service page -->
       <div class="col-md-8 col-sm-8 col-xs-12" id="#p-view-1">
         <div class="row">
           <!-- single-well start-->
           <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="single-well last-content">
-              <a href="#">
+              <a href="#" title="Dịch vụ quản trị hệ thống">
                 <h4>Quản trị hệ thống</h4>
               </a>
-              <p>
-                Gánh nặng về việc quản trị hệ thống công nghệ thông tin của
-                doanh nghiệp chưa bao giờ trở nên dễ dàng, đặc biệt trong môi
-                trường kinh doanh ứng dụng sự phát triển không ngừng về công
-                nghệ như ngày nay. Hiểu rõ những khó khăn và nắm bắt những thách
-                thức của doanh nghiệp, Visitek đã nghiên cứu, giới thiệu dịch vụ
-                quản trị hệ thống cho doanh nghiệp vừa và nhỏ. Dịch vụ này giúp
-                doanh nghiệp không còn lo lắng, đau đầu về hệ thống công nghệ
-                thông tin và cho phép doanh nghiệp tập trung toàn lực và đầu tư
-                vào việc thu hút khách hàng, phát triển kinh doanh và điều hành
-                doanh nghiệp.
-              </p>
-              <!-- <ul class="marker-list">
-                                        <li>Words is roughly being maintained</li>
-                                        <li>Letters or begins with a capital letter</li>
-                                        <li>Previous casing is maintained</li>
-                                        <li>Maintains the amount of lines</li>
-                                    </ul> -->
+              <p>Gánh nặng về việc quản trị hệ thống công nghệ thông tin của doanh nghiệp chưa bao giờ
+                trở nên dễ dàng, đặc biệt trong môi trường kinh doanh ứng dụng sự phát triển không
+                ngừng về công nghệ như ngày nay. Hiểu rõ những khó khăn và nắm bắt những thách thức
+                của doanh nghiệp, Visitek đã nghiên cứu, giới thiệu dịch vụ quản trị hệ thống cho
+                doanh nghiệp vừa và nhỏ. Dịch vụ này giúp doanh nghiệp không còn lo lắng, đau đầu về
+                hệ thống công nghệ thông tin và cho phép doanh nghiệp tập trung toàn lực và đầu tư
+                vào việc thu hút khách hàng, phát triển kinh doanh và điều hành doanh nghiệp.</p>
+
             </div>
           </div>
           <div class="col-md-12col-sm-12 col-xs-12">
             <div class="single-page">
               <div class="page-img elec-page">
-                <img src="../img/services/s4.jpg" alt="" />
+                <img src="{% static 'img/services/service4.png' %}" alt="Dịch vụ quản trị hệ thống">
               </div>
             </div>
           </div>
@@ -66,53 +60,32 @@
         <div class="row" style="padding-top: 25px;">
           <div class="col-md-12">
             <div class="single-well mar-well">
-              <a href="#">
+              <a href="#" title="Những lợi ích dành cho doanh nghiệp">
                 <h4>Những lợi ích dành cho doanh nghiệp:</h4>
               </a>
               <ul class="marker-list">
-                <li>
-                  <strong>Đội ngũ kỹ sư giàu kinh nghiệm:</strong> đội ngũ quản
-                  trị hệ thống có kinh nghiệm lâu năm và trình độ kỹ thuật cao
-                  của Visitek sẽ giúp xử lý các vấn đề công nghệ thông tin của
-                  doanh nghiệp.
+                <li><strong>Đội ngũ kỹ sư giàu kinh nghiệm:</strong> đội ngũ quản trị hệ thống có
+                  kinh nghiệm lâu năm và trình độ kỹ thuật cao của Visitek sẽ giúp xử lý các vấn
+                  đề công nghệ thông tin của doanh nghiệp.</li>
+                <li><strong>Chi phí hợp lý, cố định: </strong>Với khoản chi phí đầu tư cố định hàng
+                  tháng, doanh nghiệp có thể tự lên ngân sách một cách chính xác cho chi tiêu hàng
+                  năm về CNTT.</li>
+                <li><strong>Cắt giảm chi phí CNTT của doanh nghiệp hơn 30% trở lên:</strong> Một
+                  cuộc khảo sát khách hàng gần đây của Visitek đã chứng minh rằng, trung bình, các
+                  doanh nghiệp sử dụng dịch vụ quản trị hệ thống công nghệ thông tin cho doanh
+                  nghiệp vừa và nhỏ của chúng tôi đã giúp họ giảm ít nhất 1/3 chi phí CNTT. Rõ
+                  ràng, chúng tôi đã giúp doanh nghiệp bắt đầu tiết kiệm tiền đầu tư hàng tháng.
                 </li>
-                <li>
-                  <strong>Chi phí hợp lý, cố định: </strong>Với khoản chi phí
-                  đầu tư cố định hàng tháng, doanh nghiệp có thể tự lên ngân
-                  sách một cách chính xác cho chi tiêu hàng năm về CNTT.
-                </li>
-                <li>
-                  <strong
-                    >Cắt giảm chi phí CNTT của doanh nghiệp hơn 30% trở
-                    lên:</strong
-                  >
-                  Một cuộc khảo sát khách hàng gần đây của Visitek đã chứng minh
-                  rằng, trung bình, các doanh nghiệp sử dụng dịch vụ quản trị hệ
-                  thống công nghệ thông tin cho doanh nghiệp vừa và nhỏ của
-                  chúng tôi đã giúp họ giảm ít nhất 1/3 chi phí CNTT. Rõ ràng,
-                  chúng tôi đã giúp doanh nghiệp bắt đầu tiết kiệm tiền đầu tư
-                  hàng tháng.
-                </li>
-                <li>
-                  <strong
-                    >Tập trung vào việc thu hút khách hàng và phát triển kinh
-                    doanh của doanh nghiệp:</strong
-                  >
-                  Visitek tư vấn chiến lược, thực hiện các nhiệm vụ hỗ trợ CNTT,
-                  giúp doanh nghiệp không còn cảm giác lo lắng và đau đầu về
-                  hoạt động của hệ thống CNTT. Vì thế, doanh nghiệp giờ có thể
-                  đầu tư nhiều thời gian hơn vào việc phát triển kinh doanh và
-                  nâng cao lợi nhuận cho doanh nghiệp.
-                </li>
-                <li>
-                  <strong
-                    >Nâng cao hiệu suất làm việc tối đa cho doanh nghiệp: </strong
-                  >Chúng tôi luôn đảm bảo hệ thống công nghệ thông tin của khách
-                  hàng hoạt động ở hiệu suất cao nhất, loại bỏ sự chậm trễ và
-                  trì hoãn của hệ thống. Nhân viên trợ giúp IT của chúng tôi
-                  luôn sẵn sàng 24/7 để giải quyết nhanh chóng những thách thức
-                  và khó khăn về CNTT của khách hàng.
-                </li>
+                <li><strong>Tập trung vào việc thu hút khách hàng và phát triển kinh doanh của doanh
+                    nghiệp:</strong> Visitek tư vấn chiến lược, thực hiện các nhiệm vụ hỗ trợ
+                  CNTT, giúp doanh nghiệp không còn cảm giác lo lắng và đau đầu về hoạt động của
+                  hệ thống CNTT. Vì thế, doanh nghiệp giờ có thể đầu tư nhiều thời gian hơn vào
+                  việc phát triển kinh doanh và nâng cao lợi nhuận cho doanh nghiệp.</li>
+                <li><strong>Nâng cao hiệu suất làm việc tối đa cho doanh nghiệp: </strong>Chúng tôi
+                  luôn đảm bảo hệ thống công nghệ thông tin của khách hàng hoạt động ở hiệu suất
+                  cao nhất, loại bỏ sự chậm trễ và trì hoãn của hệ thống. Nhân viên trợ giúp IT
+                  của chúng tôi luôn sẵn sàng 24/7 để giải quyết nhanh chóng những thách thức và
+                  khó khăn về CNTT của khách hàng.</li>
               </ul>
             </div>
           </div>
@@ -120,7 +93,7 @@
       </div>
     </div>
   </div>
-  <!-- Start Quote Area -->
 </div>
+<!-- Start Quote Area -->
 
 {% endblock %}
