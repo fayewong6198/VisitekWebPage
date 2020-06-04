@@ -77,29 +77,30 @@
       <div class="col-md-6 col-sm-6 col-xs-12">
         <div class="contact-form">
           <div class="row">
-            <form id="contactForm" method="POST" class="contact-form">
+            <form id="contactForm1" action="/contact/new/" method="post" class="contact-form">
+              {% csrf_token %}
               <div class="col-md-6 col-sm-6 col-xs-12">
-                <input type="text" id="name" class="form-control" placeholder="Nhập tên" required
+                <input type="text" name="name" class="form-control" placeholder="Nhập tên" required
                   data-error="Please enter your name">
                 <div class="help-block with-errors"></div>
               </div>
               <div class="col-md-6 col-sm-6 col-xs-12">
-                <input type="text" id="name" class="form-control" placeholder="Số điện thoại" required
+                <input type="text" name="phone" class="form-control" placeholder="Số điện thoại" required
                   data-error="Please enter your phone">
                 <div class="help-block with-errors"></div>
               </div>
               <div class="col-md-12 col-sm-12 col-xs-12">
-                <input type="email" class="email form-control" id="email" placeholder="Email" required
+                <input type="email" class="email form-control" name="email" placeholder="Email" required
                   data-error="Please enter your email">
                 <div class="help-block with-errors"></div>
               </div>
               <div class="col-md-12 col-sm-12 col-xs-12">
-                <input type="text" id="msg_subject" class="form-control" placeholder="Tiêu đề" required
+                <input type="text" name="subject" class="form-control" placeholder="Tiêu đề" required
                   data-error="Please enter your message subject">
                 <div class="help-block with-errors"></div>
               </div>
               <div class="col-md-12 col-sm-12 col-xs-12">
-                <textarea id="message" rows="7" placeholder="Nội dung" class="form-control" required
+                <textarea name="message" rows="7" placeholder="Nội dung" class="form-control" required
                   data-error="Write your message"></textarea>
                 <div class="help-block with-errors"></div>
               </div>

@@ -26,19 +26,30 @@
 </head>
 
 <body>
-  <header class="header-one">
-    {% for message in messages %}
-    <div class="alert {{ message.tags }} alert-dismissible" role="alert">
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-      {{ message | safe }}
+  {% for message in messages %}
+
+  <div class="modal fade bd-example-modal-sm" id='myModal123' tabindex="-1" role="dialog"
+    aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm bg-success">
+      <div class="modal-header">
+        <h5 class="modal-title text-warning text-center"><i class="fa fa-bell"></i>&nbsp;&nbsp; Thông báo</h5>
+      </div>
+      <div class="modal-body text-light text-center">
+        <p><b><i class="fa fa-check"></i>&nbsp;{{message}}</b></p>
+      </div>
+
     </div>
-    {% endfor %} {% include 'partials/_header.html' %} {% include 'partials/_navbar.html'%}
+  </div>
+  {% endfor %}
+  <header class="header-one">
+    {% include 'partials/_header.html' %}
+    {% include 'partials/_navbar.html'%}
   </header>
 
   {% block content %} {% endblock %}
   {% include 'partials/_footer.html' %}
+
+
 
   <script src="{% static 'js/modernizr-2.8.3.min.js' %}"></script>
   <script src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
@@ -64,6 +75,15 @@
   <script src="{% static 'js/plugins.js' %}"></script>
   <!-- main js -->
   <script src="{% static 'js/main.js' %}"></script>
+  <script>
+    $(document).ready(function () {
+      $("#myModal123").modal("show");
+      setTimeout(function () {
+        $('#myModal123').modal("hide");
+      }, 2000); // <-- time in milliseconds, 1000 =  1 sec
+
+    });
+  </script>
   <script>
     // Get the modal
     var modal = document.getElementById("myModal");

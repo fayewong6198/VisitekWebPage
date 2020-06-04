@@ -2,7 +2,7 @@ from django.shortcuts import render, HttpResponse, get_object_or_404
 from django.contrib import messages
 
 # Create your views here.
-from blogs.models import Blog
+from blogs.models import Blog, Category
 
 from contact.models import Contact
 
@@ -38,25 +38,33 @@ def contact(request):
 
 def blog(request):
     blogs = Blog.objects.order_by('-created_at')[:6]
-
     context = {
         'blogs': blogs
     }
     return render(request, 'pages/blog/blog.html', context)
 
 
-def blog1(request, id):
-    blog = get_object_or_404(Blog, pk=id)
-
+def blog_detail(request, id):
+    blog = Blog.objects.get(pk=id)
+    category = Category.objects.all()
+    print("jdjdndnn-------------------------------", blog)
+    # related = Blog.objects.get(category=blog.category)[2]
     context = {
         'blog': blog,
-        'id': id
+        'id': id,
+        'related': [],
+        'category': category
     }
-    return render(request, 'pages/blog/blog1.html', context)
+    print(context)
+    return render(request, 'pages/blog/blog_detail.html', context)
 
 
-def blog2(request):
-    return render(request, 'pages/blog/blog2.html')
+def listBlog(request):
+    blogs = Blog.objects.order_by('-created_at')[:6]
+    context = {
+        'blogs': blogs
+    }
+    return render(request, 'pages/blog/listBlog.html', context)
 
 
 def service(request):

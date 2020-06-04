@@ -34,47 +34,48 @@
       <div class="blog-grid home-blog">
         <!-- Start single blog -->
         {% if blogs is not None %}
-                {% for blog in blogs %}
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="blog-container">
+        {% for blog in blogs %}
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <div class="blog-container">
 
-                        <div class="single-blog">
-                            <div class="blog-image">
-                                <a class="image-scale" href="#">
-                                    <img src="{{ blog.images.first }}" alt="">
-                                </a>
-                            </div>
-                            <div class="blog-content">
-                                <div> <a href="{% url 'blog1' blog.id %}">
-                                        <h4>{{ blog.title }}</h4>
-                                    </a></div>
+            <div class="single-blog">
+              <div class="blog-image">
+                <a class="image-scale" href="#">
+                  <img src="{{ blog.images.first }}" alt="">
+                </a>
+              </div>
+              <div class="blog-content">
+                <div> <a href="{% url 'blog_detail' blog.id %}">
+                    <h4>{{ blog.title }}</h4>
+                  </a></div>
 
-                                <div class="blog-meta">
-                                    <span class="admin-type">
-                                        <i class="fa fa-user"></i>
-                                        Admin
-                                    </span>
-                                    <span class="date-type">
-                                        <i class="fa fa-calendar"></i>
-                                        {{blog.created_at}}
-                                    </span>
-                                    <span class="comments-type">
-                                        <i class="fa fa-comment-o"></i>
-                                        32
-                                    </span>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
+                <div class="blog-meta">
+                  <span class="admin-type">
+                    <i class="fa fa-user"></i>
+                    Admin
+                  </span>
+                  <span class="date-type">
+                    <i class="fa fa-calendar"></i>
+                    {{blog.created_at}}
+                  </span>
+                  <span class="comments-type">
+                    <i class="fa fa-comment-o"></i>
+                    32
+                  </span>
                 </div>
-                <!-- End single blog -->
-                {% endfor %}
-                {% else %}
-                {% endif %}
+              </div>
+
+            </div>
+          </div>
+
+        </div>
         <!-- End single blog -->
-        {% comment %} <!-- Start single blog -->
+        {% endfor %}
+        {% else %}
+        {% endif %}
+        <!-- End single blog -->
+        {% comment %}
+        <!-- Start single blog -->
         <div class="col-md-4 col-sm-6 col-xs-12">
           <div class="single-blog">
             <div class="blog-content">
@@ -96,11 +97,6 @@
                 <h4>Tesla chuẩn bị bán xe bằng livestream ở Trung Quốc</h4>
               </a>
             </div>
-            <!-- <div class="blog-image">
-              <a class="image-scale" href="#">
-                <img src="../img/blog/b2.jpg" alt="" />
-              </a>
-            </div> -->
           </div>
         </div>
         <div class="col-md-4 col-sm-6 col-xs-12">

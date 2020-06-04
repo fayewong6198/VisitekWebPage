@@ -36,51 +36,52 @@
             data-toggle="modal" data-target="#myModal">Tư vấn</a>
           <!-- Start Left contact -->
           <div class="modal fade" id="myModal">
-            <div class="modal-dialog" id="2">
-              <div class="modal-content" id="3">
+            <div class="modal-dialog">
+              <div class="modal-content">
                 <h4 style="text-align: center;">
-                  <button style="width: 40px; height: 40px;" type="button" class="close"
-                    data-dismiss="modal">&times;</button>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
                   Để lại lời nhắn
                 </h4>
-                <form id="contactForm" class="contact-form">
-                  <div class="col-md-6 col-sm-6 col-xs-6 m-2" id="contentBox">
-                    <input type="text" id="name" class="form-control" placeholder="Nhập tên" required
+                <form id="contactForm3" method="POST" action='/contact/consult/' class="contact-form">
+                  {% csrf_token %}
+                  <div class="col-md-6 col-sm-6 col-xs-6 m-2">
+                    <input type="text" name="name1" class="form-control" placeholder="Nhập tên" required
                       data-error="Please enter your name">
                     <div class="help-block with-errors"></div>
                   </div>
-                  <div class="col-md-6 col-sm-6 col-xs-6" id="contentBox">
-                    <input type="text" class="email form-control" id="email" placeholder="Số điện thoại" required
+                  <div class="col-md-6 col-sm-6 col-xs-6">
+                    <input type="text" class="email form-control" name="phone1" placeholder="Số điện thoại" required
                       data-error="Please enter your email">
                     <div class="help-block with-errors"></div>
                   </div>
                   <div class="col-md-12 col-sm-12 col-xs-12">
-                    <input type="text" id="msg_subject" class="form-control" placeholder="example@gmail.com" required
+                    <input type="text" name="email1" class="form-control" placeholder="example@gmail.com" required
                       data-error="Please enter your message subject">
                     <div class="help-block with-errors"></div>
                   </div>
                   <div class="col-md-12 col-sm-12 col-xs-12">
-                    <input type="text" id="msg_subject" class="form-control" placeholder="Tiêu đề" required
+                    <input type="text" name="subject1" class="form-control" placeholder="Tiêu đề" required
                       data-error="Please enter your message subject">
                     <div class="help-block with-errors"></div>
                   </div>
                   <div class="col-md-12 col-sm-12 col-xs-12">
-                    <textarea id="message" rows="7" placeholder="Nội dung" class="form-control" required
+                    <textarea name="message1" rows="7" placeholder="Nội dung" class="form-control" required
                       data-error="Write your message"></textarea>
                     <div class="help-block with-errors"></div>
                   </div>
                   <div class="modal-footer">
                     <div class="col-md-12 col-sm-12 col-xs-12 text-center">
-                      <button style="margin-bottom: 5px;" type="submit" id="submit" class="add-btn contact-btn">Gửi tin
+                      <button style="margin-bottom: 5px;" type="submit" name="submit1111"
+                        class="add-btn contact-btn">Gửi tin
                         nhắn</button>
-                      <div id="msgSubmit" class="h3 text-center hidden"></div>
+                      <div id="msgSubmit111" class="h3 text-center hidden"></div>
                       <div class="clearfix"></div>
                     </div>
                   </div>
                 </form>
               </div>
             </div>
-          </div><!-- End Left contact -->
+          </div>
         </div>
         <!-- mainmenu start -->
         <nav class="navbar navbar-default">
@@ -108,12 +109,8 @@
                         Thống</a></li>
                   </ul>
                 </li>
-                <!-- <li><a href="blog.html">Blog</a>
-                                  <ul class="sub-menu">
-                                      <li><a href="blog-sidebar.html">Blog List</a></li>
-                                      <li><a href="blog-details.html">Blog Details</a></li>
-                                  </ul>
-                              </li> -->
+
+                <li><a title="Visitek bài viết" href="/blog">Blog</a></li>
                 <li><a title="Visitek Liên hệ" href="/contact">Liên Hệ</a></li>
               </ul>
             </div>

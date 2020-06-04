@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'tinymce',
+    'ckeditor',
+    'ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
@@ -105,9 +106,6 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-# Internationalization
-# https://docs.djangoproject.com/en/3.0/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -119,24 +117,19 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.0/howto/static-files/
-
+DEBUG = True
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATIC_URL = '/static/'
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = 'media/'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'VisitekWebPage/static')
-]
-
-
-EMAIL_HOST = 'smtp.mailtrap.io'
-EMAIL_HOST_USER = 'd27a254611159d'
-EMAIL_HOST_PASSWORD = '3d81efbdad2baa'
-EMAIL_PORT = '2525'
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'media')
+# ckeditor configs
+CKEDITOR_UPLOAD_PATH = MEDIA_ROOT + 'ck_uploads/'
+CKEDITOR_RESTRICT_BY_USER = True
+CKEDITOR_BROWSE_SHOW_DIRS = True
+CKEDITOR_ALLOW_NONIMAGE_FILES = True
 
 MEDIA_URL = '/media/'
 CACHES = {
@@ -157,3 +150,10 @@ try:
     }
 except Exception as e:
     pass
+
+# location /static/ { alias /home/mysite/static/; }
+# location /media/ { alias /home/mysite/media/; }
+# EMAIL_HOST = 'smtp.mailtrap.io'
+# EMAIL_HOST_USER = 'd27a254611159d'
+# EMAIL_HOST_PASSWORD = '3d81efbdad2baa'
+# EMAIL_PORT = '2525'

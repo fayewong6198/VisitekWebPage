@@ -13,15 +13,16 @@ def contact(request):
         subject = a.get("subject")
         email = a.get("email")
         message = a.get("message")
-        #phone = a.get("phone")
+        phone = a.get("phone")
         contact = Contact(name=name, subject=subject,
-                          email=email, message=message)
+                          email=email, message=message, phone=phone)
         contact.save()
-        print(request.path)
-        messages.success(request, "Your message have been saved.")
-        return render(request, "pages/index.html")
-
-    return redirect('/')
+        messages.success(request, "Your contact have been saved.")
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+        storage = messages.get_messages(request)
+        storage.used = True
+    messages.success(request, "server error")
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
 
 def consult(request):
@@ -35,7 +36,9 @@ def consult(request):
         contact = Contact(name=name, subject=subject,
                           email=email, phone=phone, message=message)
         contact.save()
-        messages.success(request, "Your message have been saved.")
-        return render(request, "pages/index.html")
-
-    return redirect('/')
+        messages.success(request, "Your contact have been saved.")
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+        storage = messages.get_messages(request)
+        storage.used = True
+    messages.success(request, "server error")
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
