@@ -28,14 +28,12 @@
 <body>
   {% for message in messages %}
 
-  <div class="modal fade bd-example-modal-sm" id='myModal123' tabindex="-1" role="dialog"
+  <div class="modal fade bd-example-modal-sm" style="border-radius: 10px" id='myModal123' tabindex="-1" role="dialog"
     aria-labelledby="mySmallModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm bg-success">
-      <div class="modal-header">
-        <h5 class="modal-title text-warning text-center"><i class="fa fa-bell"></i>&nbsp;&nbsp; Thông báo</h5>
-      </div>
-      <div class="modal-body text-light text-center">
-        <p><b><i class="fa fa-check"></i>&nbsp;{{message}}</b></p>
+
+      <div class="modal-body text-light text-center mt-5" style="padding-top: 30px; ">
+        <p><b><i class="fa fa-check text-success"></i>&nbsp;{{message}}</b></p>
       </div>
 
     </div>
@@ -80,15 +78,12 @@
       $("#myModal123").modal("show");
       setTimeout(function () {
         $('#myModal123').modal("hide");
-      }, 2000); // <-- time in milliseconds, 1000 =  1 sec
+      }, 1500); // <-- time in milliseconds, 1000 =  1 sec
 
     });
   </script>
   <script>
-    // Get the modal
     var modal = document.getElementById("myModal");
-
-    // When the user clicks anywhere outside of the modal, close it
     $("#myModal").click(function (ev) {
       if (ev.target != this) return;
       $("#myModal").modal("hide");

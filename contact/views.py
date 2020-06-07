@@ -6,7 +6,7 @@ from django.contrib import messages
 # Create your views here.
 
 
-def contact(request):
+def newContact(request):
     if (request.method == "POST"):
         a = request.POST.dict()
         name = a.get("name")
@@ -16,25 +16,6 @@ def contact(request):
         phone = a.get("phone")
         contact = Contact(name=name, subject=subject,
                           email=email, message=message, phone=phone)
-        contact.save()
-        messages.success(request, "Your contact have been saved.")
-        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-        storage = messages.get_messages(request)
-        storage.used = True
-    messages.success(request, "server error")
-    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-
-
-def consult(request):
-    if (request.method == "POST"):
-        a = request.POST.dict()
-        name = a.get("name1")
-        subject = a.get("subject1")
-        email = a.get("email1")
-        message = a.get("message1")
-        phone = a.get("phone1")
-        contact = Contact(name=name, subject=subject,
-                          email=email, phone=phone, message=message)
         contact.save()
         messages.success(request, "Your contact have been saved.")
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))

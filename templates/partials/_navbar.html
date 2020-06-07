@@ -24,11 +24,11 @@
               <i class="fa fa-search" style="font-size: 2rem;"></i>
             </a>
             <div class="dropdown-menu dropdown-menu-right " aria-labelledby="dropdownMenuLink">
-              <div class="dropdown-items">
-                <input type="text" placeholder="Search..." class="input-search" />
+              <form action="{% url 'search' %}" class=""dropdown-items">
+                <input type="text" name="search" placeholder="Search..." class="input-search" />
                 <button class="btn-search" type="submit">
-                  <i class="fa fa-search"></i>
-              </div>
+                  <i class="fa fa-search"></i></button>
+              </form>
             </div>
 
           </div>
@@ -41,31 +41,31 @@
                 <h4 style="text-align: center;">
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
                   Để lại lời nhắn
-                </h4>
-                <form id="contactForm3" method="POST" action='/contact/consult/' class="contact-form">
+                </h4> 
+                <form id="contactForm3" method="POST" action='/contact/new/' class="contact-form">
                   {% csrf_token %}
                   <div class="col-md-6 col-sm-6 col-xs-6 m-2">
-                    <input type="text" name="name1" class="form-control" placeholder="Nhập tên" required
+                    <input type="text" name="name" class="form-control" placeholder="Nhập tên" required
                       data-error="Please enter your name">
                     <div class="help-block with-errors"></div>
                   </div>
                   <div class="col-md-6 col-sm-6 col-xs-6">
-                    <input type="text" class="email form-control" name="phone1" placeholder="Số điện thoại" required
+                    <input type="text" class="email form-control" name="phone" placeholder="Số điện thoại" required
                       data-error="Please enter your email">
                     <div class="help-block with-errors"></div>
                   </div>
                   <div class="col-md-12 col-sm-12 col-xs-12">
-                    <input type="text" name="email1" class="form-control" placeholder="example@gmail.com" required
+                    <input type="text" name="email" class="form-control" placeholder="example@gmail.com" required
                       data-error="Please enter your message subject">
                     <div class="help-block with-errors"></div>
                   </div>
                   <div class="col-md-12 col-sm-12 col-xs-12">
-                    <input type="text" name="subject1" class="form-control" placeholder="Tiêu đề" required
+                    <input type="text" name="subject" class="form-control" placeholder="Tiêu đề" required
                       data-error="Please enter your message subject">
                     <div class="help-block with-errors"></div>
                   </div>
                   <div class="col-md-12 col-sm-12 col-xs-12">
-                    <textarea name="message1" rows="7" placeholder="Nội dung" class="form-control" required
+                    <textarea name="message" rows="7" placeholder="Nội dung" class="form-control" required
                       data-error="Write your message"></textarea>
                     <div class="help-block with-errors"></div>
                   </div>
@@ -110,7 +110,7 @@
                   </ul>
                 </li>
 
-                <li><a title="Visitek bài viết" href="/blog">Blog</a></li>
+                <li><a title="Visitek bài viết" href="/list_blog">Blog</a></li>
                 <li><a title="Visitek Liên hệ" href="/contact">Liên Hệ</a></li>
               </ul>
             </div>
@@ -157,7 +157,7 @@
                       Thống</a></li>
                 </ul>
               </li>
-
+              <li><a title="Visitek bài viết" href="/list_blog">Blog</a></li>
               <li><a title="Visitek Liên hệ mobile" href="/contact">Liên Hệ</a></li>
             </ul>
           </nav>

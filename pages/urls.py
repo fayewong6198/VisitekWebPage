@@ -12,7 +12,7 @@ urlpatterns = [
     path('list_blog/', views.listBlog, name='list_blog'),
     path('services/', views.service, name='service'),
     path('service-details/', views.detail_service, name='detail_service'),
-    path('service-consult/', views.service_detail_consult,
+    path('service-detail-consult/', views.service_detail_consult,
          name='service_detail_consult'),
     path('service-detail-manage/', views.service_detail_manage,
          name='service_detail_manage'),
@@ -22,5 +22,5 @@ urlpatterns = [
          name='service_detail_repair'),
     path('service-detail-security/', views.service_detail_security,
          name='service_detail_security'),
-
+    path('blogs/', views.search, name='search')
 ]

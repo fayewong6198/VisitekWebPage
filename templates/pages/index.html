@@ -418,6 +418,63 @@
     </div>
 </div>
 <!-- End digital-servicesarea -->
+<div class="blog-area fix bg-color area-padding-2">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="section-headline text-center">
+          <h3>TIN TỨC</h3>
+          <p>Cập nhật các tin tức công nghệ mới nhất</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="blog-grid home-blog">
+        <!-- Start single blog -->
+        {% if blogs is not None %}
+        {% for blog in blogs %}
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <div class="blog-container">
 
+            <div class="single-blog">
+              <div class="blog-image">
+                <a class="image-scale" href="#">
+                  <img src="{{ blog.images.first }}" alt="">
+                </a>
+              </div>
+              <div class="blog-content">
+                <div> <a href="{% url 'blog_detail' blog.id %}">
+                    <h4>{{ blog.title }}</h4>
+                  </a></div>
+
+                <div class="blog-meta">
+                  <span class="admin-type">
+                    <i class="fa fa-user"></i>
+                    Admin
+                  </span>
+                  <span class="date-type">
+                    <i class="fa fa-calendar"></i>
+                    {{blog.created_at}}
+                  </span>
+                  <span class="comments-type">
+                    <i class="fa fa-comment-o"></i>
+                    32
+                  </span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+        <!-- End single blog -->
+        {% endfor %}
+        {% else %}
+        {% endif %}
+
+      </div>
+    </div>
+  </div>
+</div>
 
 {% endblock %}

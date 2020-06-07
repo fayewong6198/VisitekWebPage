@@ -1,14 +1,14 @@
 from django.shortcuts import render, HttpResponse, get_object_or_404
 from django.contrib import messages
-
+from django.db.models import Q
+from unidecode import unidecode
 # Create your views here.
 from blogs.models import Blog, Category
-
 from contact.models import Contact
 
 
 def index(request):
-    blogs = Blog.objects.all()
+    blogs = Blog.objects.all().order_by('-created_at')[:3]
 
     context = {
         'blogs': blogs
@@ -47,13 +47,16 @@ def blog(request):
 def blog_detail(request, id):
     blog = Blog.objects.get(pk=id)
     category = Category.objects.all()
-    print("jdjdndnn-------------------------------", blog)
-    # related = Blog.objects.get(category=blog.category)[2]
+
+    related = Blog.objects.filter(
+        category=blog.category).exclude(pk=id)
+    recent = Blog.objects.order_by('-created_at')[:15]
     context = {
         'blog': blog,
         'id': id,
-        'related': [],
-        'category': category
+        'related': related,
+        'category': category,
+        'recent': recent
     }
     print(context)
     return render(request, 'pages/blog/blog_detail.html', context)
@@ -61,8 +64,12 @@ def blog_detail(request, id):
 
 def listBlog(request):
     blogs = Blog.objects.order_by('-created_at')[:6]
+    category = Category.objects.all()
+    recent = Blog.objects.order_by('-created_at')[:15]
     context = {
-        'blogs': blogs
+        'blogs': blogs,
+        'category': category,
+        'recent': recent
     }
     return render(request, 'pages/blog/listBlog.html', context)
 
@@ -113,3 +120,19 @@ def service_detail_outsource(request):
         'status': 'service_detail_outsource'
     }
     return render(request, 'pages/service/service-detail-outsource.html', context)
+
+
+def search(request):
+    content = unidecode(request.GET.get('search')).split()
+    result = []
+    blogs = Blog.objects.all()
+    for i in content:
+        for x in blogs:
+            if x not in result:
+                if i.lower()in unidecode(x.title).lower():
+                    result.append(x)
+
+    context = {
+        'blogs': result
+    }
+    return render(request, 'pages/blog/listBlog.html', context)

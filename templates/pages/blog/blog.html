@@ -20,6 +20,7 @@
 </div>
 <!-- END Header -->
 <!--Blog Area Start-->
+{% if blogs is not None %}
 <div class="blog-area fix bg-color area-padding-2">
   <div class="container">
     <div class="row">
@@ -33,7 +34,7 @@
     <div class="row">
       <div class="blog-grid home-blog">
         <!-- Start single blog -->
-        {% if blogs is not None %}
+
         {% for blog in blogs %}
         <div class="col-md-4 col-sm-6 col-xs-12">
           <div class="blog-container">
@@ -71,166 +72,9 @@
         </div>
         <!-- End single blog -->
         {% endfor %}
-        {% else %}
-        {% endif %}
-        <!-- End single blog -->
-        {% comment %}
-        <!-- Start single blog -->
-        <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="single-blog">
-            <div class="blog-content">
-              <div class="blog-meta">
-                <span class="admin-type">
-                  <i class="fa fa-user"></i>
-                  Admin
-                </span>
-                <span class="date-type">
-                  <i class="fa fa-calendar"></i>
-                  13 may, 2018
-                </span>
-                <span class="comments-type">
-                  <i class="fa fa-comment-o"></i>
-                  16
-                </span>
-              </div>
-              <a href="#">
-                <h4>Tesla chuẩn bị bán xe bằng livestream ở Trung Quốc</h4>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="single-blog">
-            <!-- <div class="blog-image">
-              <a class="image-scale" href="#">
-                <img src="../img/blog/b3.jpg" alt="" />
-              </a>
-            </div> -->
-            <div class="blog-content">
-              <div class="blog-meta">
-                <span class="admin-type">
-                  <i class="fa fa-user"></i>
-                  Admin
-                </span>
-                <span class="date-type">
-                  <i class="fa fa-calendar"></i>
-                  24 april, 2019
-                </span>
-                <span class="comments-type">
-                  <i class="fa fa-comment-o"></i>
-                  07
-                </span>
-              </div>
-              <a href="#">
-                <h4>
-                  "Trên tay" máy in 3D giá 300 triệu ở Việt Nam: sang, xịn nhưng
-                  chỉ dành cho dân pro
-                </h4>
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- End single blog -->
-        <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="single-blog">
-            <div class="blog-content">
-              <div class="blog-meta">
-                <span class="admin-type">
-                  <i class="fa fa-user"></i>
-                  Admin
-                </span>
-                <span class="date-type">
-                  <i class="fa fa-calendar"></i>
-                  28 june, 2019
-                </span>
-                <span class="comments-type">
-                  <i class="fa fa-comment-o"></i>
-                  32
-                </span>
-              </div>
-              <a href="#">
-                <h4>
-                  Facebook sắp ra mắt ứng dụng live stream và chơi game riêng,
-                  để đánh bại Twitch và YouTube
-                </h4>
-              </a>
-            </div>
-            <!-- <div class="blog-image">
-              <a class="image-scale" href="#">
-                <img src="../img/blog/b4.jpg" alt="" />
-              </a>
-            </div> -->
-          </div>
-        </div>
-        <!-- End single blog -->
-        <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="single-blog">
-            <!-- <div class="blog-image">
-              <a class="image-scale" href="#">
-                <img src="../img/blog/b5.jpg" alt="" />
-              </a>
-            </div> -->
-            <div class="blog-content">
-              <div class="blog-meta">
-                <span class="admin-type">
-                  <i class="fa fa-user"></i>
-                  Admin
-                </span>
-                <span class="date-type">
-                  <i class="fa fa-calendar"></i>
-                  28 june, 2019
-                </span>
-                <span class="comments-type">
-                  <i class="fa fa-comment-o"></i>
-                  32
-                </span>
-              </div>
-              <a href="#">
-                <h4>
-                  Chip AI mới cho phép mắt nhân tạo phân tích xong hình ảnh chỉ
-                  trong vài nano giây
-                </h4>
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- End single blog -->
-        <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="single-blog">
-            <div class="blog-content">
-              <div class="blog-meta">
-                <span class="admin-type">
-                  <i class="fa fa-user"></i>
-                  Admin
-                </span>
-                <span class="date-type">
-                  <i class="fa fa-calendar"></i>
-                  28 june, 2019
-                </span>
-                <span class="comments-type">
-                  <i class="fa fa-comment-o"></i>
-                  32
-                </span>
-              </div>
-              <a href="#">
-                <h4>
-                  Giải mã bí ẩn: Tại sao nhiều bệnh nhân phải nằm sấp khi điều
-                  trị Covid-19?
-                </h4>
-              </a>
-            </div>
-            <!-- <div class="blog-image">
-              <a class="image-scale" href="#">
-                <img src="../img/blog/b6.jpg" alt="" />
-              </a>
-            </div> -->
-          </div>
-        </div>
-        <!-- End single blog --> {% endcomment %}
       </div>
     </div>
-    <!-- End row -->
   </div>
 </div>
-<!--End of Blog Area-->
+{% endif %}
 {%endblock%}
