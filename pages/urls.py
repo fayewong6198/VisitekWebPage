@@ -9,7 +9,7 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('blog/', views.blog, name='blog'),
     path('blog_detail/<int:id>', views.blog_detail, name='blog_detail'),
-    path('list_blog/', views.listBlog, name='list_blog'),
+    path('blogs/', views.blogs, name='list_blog'),
     path('services/', views.service, name='service'),
     path('service-details/', views.detail_service, name='detail_service'),
     path('service-detail-consult/', views.service_detail_consult,
@@ -22,5 +22,8 @@ urlpatterns = [
          name='service_detail_repair'),
     path('service-detail-security/', views.service_detail_security,
          name='service_detail_security'),
-    path('blogs/', views.search, name='search')
+    path('search/', views.search, name='search')
 ]
+
+# handler404 = views.customHandler404
+# handler500 = views.customHandler500

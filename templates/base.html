@@ -26,52 +26,36 @@
 </head>
 
 <body>
+  {% if messages %}
   {% for message in messages %}
-
   <div class="modal fade bd-example-modal-sm" style="border-radius: 10px" id='myModal123' tabindex="-1" role="dialog"
     aria-labelledby="mySmallModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm bg-success">
-
       <div class="modal-body text-light text-center mt-5" style="padding-top: 30px; ">
         <p><b><i class="fa fa-check text-success"></i>&nbsp;{{message}}</b></p>
       </div>
-
     </div>
   </div>
   {% endfor %}
+  {% endif %}
   <header class="header-one">
     {% include 'partials/_header.html' %}
     {% include 'partials/_navbar.html'%}
   </header>
-
   {% block content %} {% endblock %}
   {% include 'partials/_footer.html' %}
-
-
-
   <script src="{% static 'js/modernizr-2.8.3.min.js' %}"></script>
   <script src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
-  <!-- bootstrap js -->
   <script src="{% static 'js/bootstrap.min.js' %}"></script>
-  <!-- owl.carousel js -->
   <script src="{% static 'js/owl.carousel.min.js' %}"></script>
-  <!-- Counter js -->
   <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
-  <!-- waypoint js -->
   <script src="{% static 'js/waypoints.js' %}"></script>
-  <!-- magnific js -->
   <script src="{% static 'js/magnific.min.js' %}"></script>
-  <!-- wow js -->
   <script src="{% static 'js/wow.min.js' %}"></script>
-  <!-- venobox js -->
   <script src="{% static 'js/venobox.min.js' %}"></script>
-  <!-- meanmenu js -->
   <script src="{% static 'js/jquery.meanmenu.js' %}"></script>
-  <!-- Form validator js -->
   <script src="{% static 'js/form-validator.min.js' %}"></script>
-  <!-- plugins js -->
   <script src="{% static 'js/plugins.js' %}"></script>
-  <!-- main js -->
   <script src="{% static 'js/main.js' %}"></script>
   <script>
     $(document).ready(function () {

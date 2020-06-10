@@ -3,11 +3,12 @@
 */
 
 @import url(fonts.css);
+
 body {
     margin: 0;
     padding: 0;
     font-size: 14px;
-    font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+    font-family: "Roboto","Lucida Grande","DejaVu Sans","Bitstream Vera Sans",Verdana,Arial,sans-serif;
     color: #333;
     background: #fff;
 }
@@ -51,7 +52,7 @@ p {
     line-height: 140%;
 }
 
-h1, h2, h3, h4, h5 {
+h1,h2,h3,h4,h5 {
     font-weight: bold;
 }
 
@@ -192,7 +193,7 @@ p.mini {
 }
 
 div.help ul {
-    margin-bottom: 0;
+     margin-bottom: 0;
 }
 
 .help-tooltip {
@@ -259,7 +260,8 @@ th {
     text-align: left;
 }
 
-thead th, tfoot td {
+thead th,
+tfoot td {
     color: #666;
     padding: 5px 10px;
     font-size: 11px;
@@ -373,11 +375,13 @@ table thead th.sorted .sortoptions a.sortremove:after {
     color: #999;
 }
 
-table thead th.sorted .sortoptions a.sortremove:focus:after, table thead th.sorted .sortoptions a.sortremove:hover:after {
+table thead th.sorted .sortoptions a.sortremove:focus:after,
+table thead th.sorted .sortoptions a.sortremove:hover:after {
     color: #447e9b;
 }
 
-table thead th.sorted .sortoptions a.sortremove:focus, table thead th.sorted .sortoptions a.sortremove:hover {
+table thead th.sorted .sortoptions a.sortremove:focus,
+table thead th.sorted .sortoptions a.sortremove:hover {
     background-position: 0 -14px;
 }
 
@@ -385,7 +389,8 @@ table thead th.sorted .sortoptions a.ascending {
     background-position: 0 -28px;
 }
 
-table thead th.sorted .sortoptions a.ascending:focus, table thead th.sorted .sortoptions a.ascending:hover {
+table thead th.sorted .sortoptions a.ascending:focus,
+table thead th.sorted .sortoptions a.ascending:hover {
     background-position: 0 -42px;
 }
 
@@ -394,7 +399,8 @@ table thead th.sorted .sortoptions a.descending {
     background-position: 0 -56px;
 }
 
-table thead th.sorted .sortoptions a.descending:focus, table thead th.sorted .sortoptions a.descending:hover {
+table thead th.sorted .sortoptions a.descending:focus,
+table thead th.sorted .sortoptions a.descending:hover {
     background-position: 0 -70px;
 }
 
@@ -408,7 +414,6 @@ input, textarea, select, .form-row p, form .button {
     font-weight: normal;
     font-size: 13px;
 }
-
 .form-row div.help {
     padding: 2px 3px;
 }
@@ -417,14 +422,17 @@ textarea {
     vertical-align: top;
 }
 
-input[type=text], input[type=password], input[type=email], input[type=url], input[type=number], input[type=tel], textarea, select, .vTextField {
+input[type=text], input[type=password], input[type=email], input[type=url],
+input[type=number], input[type=tel], textarea, select, .vTextField {
     border: 1px solid #ccc;
     border-radius: 4px;
     padding: 5px 6px;
     margin-top: 0;
 }
 
-input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, input[type=url]:focus, input[type=number]:focus, input[type=tel]:focus, textarea:focus, select:focus, .vTextField:focus {
+input[type=text]:focus, input[type=password]:focus, input[type=email]:focus,
+input[type=url]:focus, input[type=number]:focus, input[type=tel]:focus,
+textarea:focus, select:focus, .vTextField:focus {
     border-color: #999;
 }
 
@@ -453,7 +461,9 @@ a.button {
     padding: 4px 5px;
 }
 
-.button:active, input[type=submit]:active, input[type=button]:active, .button:focus, input[type=submit]:focus, input[type=button]:focus, .button:hover, input[type=submit]:hover, input[type=button]:hover {
+.button:active, input[type=submit]:active, input[type=button]:active,
+.button:focus, input[type=submit]:focus, input[type=button]:focus,
+.button:hover, input[type=submit]:hover, input[type=button]:hover {
     background: #609ab6;
 }
 
@@ -468,13 +478,18 @@ a.button {
     background: #417690;
 }
 
-.button.default:active, input[type=submit].default:active, .button.default:focus, input[type=submit].default:focus, .button.default:hover, input[type=submit].default:hover {
+.button.default:active, input[type=submit].default:active,
+.button.default:focus, input[type=submit].default:focus,
+.button.default:hover, input[type=submit].default:hover {
     background: #205067;
 }
 
-.button[disabled].default, input[type=submit][disabled].default, input[type=button][disabled].default {
+.button[disabled].default,
+input[type=submit][disabled].default,
+input[type=button][disabled].default {
     opacity: 0.4;
 }
+
 
 /* MODULES */
 
@@ -511,7 +526,8 @@ a.button {
     color: #fff;
 }
 
-.module caption, .inline-group h2 {
+.module caption,
+.inline-group h2 {
     font-size: 12px;
     letter-spacing: 0.5px;
     text-transform: uppercase;
@@ -723,11 +739,11 @@ a.deletelink:focus, a.deletelink:hover {
     background-color: #417690;
 }
 
-.object-tools a:focus {
+.object-tools a:focus{
     text-decoration: none;
 }
 
-.object-tools a.viewsitelink, .object-tools a.golink, .object-tools a.addlink {
+.object-tools a.viewsitelink, .object-tools a.golink,.object-tools a.addlink {
     background-repeat: no-repeat;
     background-position: right 7px center;
     padding-right: 26px;
@@ -827,7 +843,7 @@ table#change-history tbody th {
     color: #fff;
 }
 
-#header a:focus, #header a:hover {
+#header a:focus , #header a:hover {
     text-decoration: underline;
 }
 
@@ -933,7 +949,9 @@ table#change-history tbody th {
     color: #fff;
 }
 
-.delete-confirmation form input[type="submit"]:active, .delete-confirmation form input[type="submit"]:focus, .delete-confirmation form input[type="submit"]:hover {
+.delete-confirmation form input[type="submit"]:active,
+.delete-confirmation form input[type="submit"]:focus,
+.delete-confirmation form input[type="submit"]:hover {
     background: #a41515;
 }
 
@@ -949,12 +967,13 @@ table#change-history tbody th {
     margin: 0 0 0 10px;
 }
 
-.delete-confirmation form .cancel-link:active, .delete-confirmation form .cancel-link:focus, .delete-confirmation form .cancel-link:hover {
+.delete-confirmation form .cancel-link:active,
+.delete-confirmation form .cancel-link:focus,
+.delete-confirmation form .cancel-link:hover {
     background: #ccc;
 }
 
 /* POPUP */
-
 .popup #content {
     padding: 20px;
 }

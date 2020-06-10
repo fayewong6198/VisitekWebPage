@@ -275,7 +275,7 @@ div#preloader {
 }
 
 .area-padding {
-  padding: 110px 0px;
+  padding: 80px 0px 0 0;
 }
 
 .area-padding-2 {
@@ -1704,6 +1704,7 @@ hellof .counter-image {
   padding: 10px;
   flex-direction: column;
   height: 40%;
+  padding: 1.7rem;
 }
 
 .blog-content a h4 {
@@ -1725,6 +1726,17 @@ hellof .counter-image {
 .admin-type i, .date-type i, .comments-type i {
   color: #3078fb;
   margin-right: 5px;
+}
+
+.image-scale img {
+  width: 100%;
+  height: 223px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.blog-image {
+  padding: unset;
 }
 
 .single-blog:hover .blog-content::after {
@@ -1774,22 +1786,27 @@ hellof .counter-image {
 }
 
 .blog-btn {
-  color: #fff;
   display: inline-block;
-  font-size: 16px;
-  font-weight: 400;
-  transition: all 0.4s ease 0s;
-  border: 1px solid #3078fb;
-  background: #3078fb;
-  padding: 7px 24px;
-  margin-top: 10px;
-  border-radius: 3px;
+  color: #3078fb;
+  text-decoration: none;
+  font-size: 1.5rem;
+  justify-content: flex-end;
 }
 
-.blog-btn:hover {
-  color: #3078fb;
-  background: transparent;
-  transition: all 0.4s ease 0s;
+.blog-btn::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #3078fb;
+  transition: width .3s;
+}
+
+.blog-btn:hover::after {
+  width: 105%;
+  color: #3078fb!important;
+  opacity: .8;
+  /* transition: width .3s; */
 }
 
 /*----------------------------------------
@@ -2838,6 +2855,12 @@ span.q-text {
   padding-right: 10px;
 }
 
+.post-img>img {
+  object-position: center;
+  width: 250px!important;
+  object-fit: cover;
+}
+
 .left-blog .post-img a {
   display: block;
   border: 1px solid #fafafa;
@@ -2873,10 +2896,10 @@ span.q-text {
 }
 
 .recent-single-post img {
-  width: 100%;
-  max-width: 80px;
+  width: 100%!important;
+  max-width: 100px;
   height: 80px;
-  object-fit: cover;
+  object-fit: center;
   border-radius: 2px;
 }
 
@@ -2922,6 +2945,9 @@ span.q-text {
   padding-left: 0;
   margin: 10px 0 0px;
   border-radius: 4px;
+  float: right;
+  padding-right: unset;
+  margin-right: unset;
 }
 
 .pagination>li>a, .pagination>li>span {
@@ -3033,8 +3059,6 @@ blockquote p {
 .comments-content-wrap span b {
   margin-right: 5px;
 }
-
-.comments-content-wrap span a:hover {}
 
 span.post-time {
   margin-right: 5px;
@@ -3773,9 +3797,6 @@ span.email-notes {
   }
   .intro-area-3 .slider-content {
     margin-top: -60px;
-  }
-  .blog-content {
-    padding: 30px 20px;
   }
   .right-side {
     padding-left: 20px;
@@ -5530,133 +5551,6 @@ span.email-notes {
   }
 }
 
-/* IOS preloader */
-
-/*.vbox-preloader{
-    position:fixed; 
-    width:32px; 
-    height:32px;
-    left:50%; 
-    top:50%; 
-    margin-left:-16px; 
-    margin-top:-16px;
-    background-image: url(preload-ios.png);
-    text-indent: -100px;
-    overflow: hidden;
-    -webkit-animation: playload 1.4s steps(12) infinite;
-       -moz-animation: playload 1.4s steps(12) infinite;
-        -ms-animation: playload 1.4s steps(12) infinite;
-         -o-animation: playload 1.4s steps(12) infinite;
-            animation: playload 1.4s steps(12) infinite;
-}
-@-webkit-keyframes playload {
-   from { background-position:    0px; }
-     to { background-position: -384px; }
-}
-@-moz-keyframes playload {
-   from { background-position:    0px; }
-     to { background-position: -384px; }
-}
-@-ms-keyframes playload {
-   from { background-position:    0px; }
-     to { background-position: -384px; }
-}
-@-o-keyframes playload {
-   from { background-position:    0px; }
-     to { background-position: -384px; }
-}
-@keyframes playload {
-   from { background-position:    0px; }
-     to { background-position: -384px; }
-}
-*/
-
-/* dots preloader */
-
-/*
-.vbox-preloader{
-    position:fixed; 
-    width:32px; 
-    height:11px;
-    left:50%; 
-    top:50%; 
-    margin-left:-16px; 
-    margin-top:-16px;
-    background-image: url(preload-dots.png);
-    text-indent: -100px;
-    overflow: hidden;
-    -webkit-animation: playload 1.4s steps(24) infinite;
-       -moz-animation: playload 1.4s steps(24) infinite;
-        -ms-animation: playload 1.4s steps(24) infinite;
-         -o-animation: playload 1.4s steps(24) infinite;
-            animation: playload 1.4s steps(24) infinite;
-}
-@-webkit-keyframes playload {
-   from { background-position:    0px; }
-     to { background-position: -768px; }
-}
-@-moz-keyframes playload {
-   from { background-position:    0px; }
-     to { background-position: -768px; }
-}
-@-ms-keyframes playload {
-   from { background-position:    0px; }
-     to { background-position: -768px; }
-}
-@-o-keyframes playload {
-   from { background-position:    0px; }
-     to { background-position: -768px; }
-}
-@keyframes playload {
-   from { background-position:    0px; }
-     to { background-position: -768px; }
-}
-*/
-
-/* quads preloader */
-
-/*
-.vbox-preloader{
-    position:fixed; 
-    width:32px; 
-    height:10px;
-    left:50%; 
-    top:50%; 
-    margin-left:-16px; 
-    margin-top:-16px;
-    background-image: url(preload-quads.png);
-    text-indent: -100px;
-    overflow: hidden;
-    -webkit-animation: playload 1.4s steps(12) infinite;
-       -moz-animation: playload 1.4s steps(12) infinite;
-        -ms-animation: playload 1.4s steps(12) infinite;
-         -o-animation: playload 1.4s steps(12) infinite;
-            animation: playload 1.4s steps(12) infinite;
-}
-@-webkit-keyframes playload {
-   from { background-position:    0px; }
-     to { background-position: -384px; }
-}
-@-moz-keyframes playload {
-   from { background-position:    0px; }
-     to { background-position: -384px; }
-}
-@-ms-keyframes playload {
-   from { background-position:    0px; }
-     to { background-position: -384px; }
-}
-@-o-keyframes playload {
-   from { background-position:    0px; }
-     to { background-position: -384px; }
-}
-@keyframes playload {
-   from { background-position:    0px; }
-     to { background-position: -384px; }
-}
-*/
-
-/* ----- navigation ----- */
-
 .vbox-close {
   background: #161617 url(../img/venubox/close.gif) no-repeat scroll 10px center;
   color: #fff;
@@ -6262,5 +6156,47 @@ img.mfp-img {
   }
   .award {
     display: none;
+  }
+}
+
+.blog_quote {
+  display: block;
+  display: -webkit-box;
+  max-width: 500px;
+  height: 10px*1.3*3;
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  -moz-line-clamp: 2;
+  -moz-box-orient: vertical;
+  -o-line-clamp: 2;
+  -o-box-orient: vertical;
+  margin-bottom: 10px;
+  line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 10px 0 10px;
+}
+
+@media screen and (min--moz-device-pixel-ratio:0), screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+  .blog_quote {
+    overflow: hidden;
+    position: relative;
+  }
+  .blog_quote:before {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    content: '…';
+  }
+  .blog_quote:after {
+    content: '';
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    margin-top: 0.2em;
+    z-index: 1;
+    right: 0;
   }
 }

@@ -2,14 +2,15 @@ from django.shortcuts import render, HttpResponse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
 from unidecode import unidecode
+import math
 # Create your views here.
 from blogs.models import Blog, Category
 from contact.models import Contact
 
 
 def index(request):
+    # class = 'act'
     blogs = Blog.objects.all().order_by('-created_at')[:3]
-
     context = {
         'blogs': blogs
     }
@@ -62,14 +63,40 @@ def blog_detail(request, id):
     return render(request, 'pages/blog/blog_detail.html', context)
 
 
-def listBlog(request):
-    blogs = Blog.objects.order_by('-created_at')[:6]
+def blogs(request):
+
+    blogs = Blog.objects.order_by('-created_at')
     category = Category.objects.all()
-    recent = Blog.objects.order_by('-created_at')[:15]
+    recent = Blog.objects.order_by('-created_at')[:10]
+
+    # count categoy
+    count_cate = []
+    for x in blogs:
+        temp = []
+        for y in count_cate:
+            temp.append(y['category'])
+        if x.category not in temp:
+            count_cate.append({
+                'category': x.category,
+                'count': Blog.objects.filter(category=x.category).count()
+            })
+    #  pagination
+    per_page = 4
+    list_page = []
+    current_page = int(request.GET.get('page') or 1)
+    max_page = math.ceil(len(blogs)/per_page)
+    for i in range(0, max_page):
+        list_page.append(i+1)
+    result = blogs[(current_page - 1) * per_page: current_page * per_page]
+
     context = {
-        'blogs': blogs,
+        'blogs': result,
         'category': category,
-        'recent': recent
+        'recent': recent,
+        'count_cate': count_cate,
+        'list_page': list_page,
+        'current_page': current_page,
+        'max_page': max_page,
     }
     return render(request, 'pages/blog/listBlog.html', context)
 
@@ -123,16 +150,42 @@ def service_detail_outsource(request):
 
 
 def search(request):
-    content = unidecode(request.GET.get('search')).split()
+
     result = []
     blogs = Blog.objects.all()
+    content = unidecode(request.GET.get('search')).split()
+    category = Category.objects.all()
+    recent = Blog.objects.order_by('-created_at')[:10]
+    count_cate = []
+
+    for x in blogs:
+        temp = []
+        for y in count_cate:
+            temp.append(y['category'])
+        if x.category not in temp:
+            count_cate.append({
+                'category': x.category,
+                'count': Blog.objects.filter(category=x.category).count()
+            })
+    #  pagination
+
     for i in content:
         for x in blogs:
             if x not in result:
                 if i.lower()in unidecode(x.title).lower():
                     result.append(x)
-
     context = {
-        'blogs': result
+        'blogs': result,
+        'category': category,
+        'recent': recent,
+        'count_cate': count_cate
     }
     return render(request, 'pages/blog/listBlog.html', context)
+
+
+# def customHandler404(request, e):
+#     return render(request, 'pages/404.html')
+
+
+# def customHandler500(request, e):
+#     return render(request, 'pages/404.html')

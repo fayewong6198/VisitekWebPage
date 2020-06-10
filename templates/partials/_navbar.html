@@ -24,8 +24,8 @@
               <i class="fa fa-search" style="font-size: 2rem;"></i>
             </a>
             <div class="dropdown-menu dropdown-menu-right " aria-labelledby="dropdownMenuLink">
-              <form action="{% url 'search' %}" class=""dropdown-items">
-                <input type="text" name="search" placeholder="Search..." class="input-search" />
+              <form action="{% url 'search' %}" class="dropdown-items">
+                <input type="text" name="search" placeholder="Tìm kiếm tin tức..." class="input-search" />
                 <button class="btn-search" type="submit">
                   <i class="fa fa-search"></i></button>
               </form>
@@ -41,7 +41,7 @@
                 <h4 style="text-align: center;">
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
                   Để lại lời nhắn
-                </h4> 
+                </h4>
                 <form id="contactForm3" method="POST" action='/contact/new/' class="contact-form">
                   {% csrf_token %}
                   <div class="col-md-6 col-sm-6 col-xs-6 m-2">
@@ -110,7 +110,7 @@
                   </ul>
                 </li>
 
-                <li><a title="Visitek bài viết" href="/list_blog">Blog</a></li>
+                <li><a title="Visitek bài viết" href="/blogs">Blog</a></li>
                 <li><a title="Visitek Liên hệ" href="/contact">Liên Hệ</a></li>
               </ul>
             </div>
@@ -157,7 +157,7 @@
                       Thống</a></li>
                 </ul>
               </li>
-              <li><a title="Visitek bài viết" href="/list_blog">Blog</a></li>
+              <li><a title="Visitek bài viết" href="/blogs">Blog</a></li>
               <li><a title="Visitek Liên hệ mobile" href="/contact">Liên Hệ</a></li>
             </ul>
           </nav>

@@ -20,64 +20,69 @@
 </div>
 <!-- END Header -->
 <!--Blog Area Start-->
+{% if blogs %}
 <div class="blog-area fix area-padding">
   <div class="container">
     <div class="row">
       <div class="blog-sidebar-right">
-        <div class="col-md-8 col-sm-8 col-xs-12">
+        <div class="col-md-7 col-sm-7 col-xs-12">
           <div class="row">
             <div class="blog-left-content">
               <!-- Start single blog -->
-              {% if blogs is not None %}
               {% for blog in blogs %}
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="single-blog row">
-                  <div class="blog-image col-md-3">
+                  <div class="blog-image col-md-6">
                     <a class="image-scale" href="#">
-                      <img src="{{ blog.images.first }}" alt="" width="50" height="50" />
+                      <img src="{{ blog.images.first }}" alt="" />
                     </a>
                   </div>
-                  <div class="col-md-9 my-2">
-                    <div class="blog-meta">
-                      <span class="admin-type my-2">
-                        <i class="fa fa-user"></i>
-                        Admin
-                      </span>
-                      <span class="date-type">
-                        <i class="fa fa-calendar"></i>
-                        {{blog.created_at}}
-                      </span>
-                      <span class="comments-type">
-                        <i class="fa fa-comment-o"></i>
-                        13
-                      </span>
+
+                  <div class="blog-content col-md-6">
+                    <div class="">
+                      <div class="blog-meta">
+                        <span class="admin-type py-3">
+                          <i class="fa fa-user"></i>
+                          Admin
+                        </span>
+                        <span class="date-type">
+                          <i class="fa fa-calendar"></i>
+                          {{blog.created_at}}
+                        </span>
+                        <!-- <span class="comments-type">
+                          <i class="fa fa-comment-o"></i>
+                          13
+                        </span> -->
+                      </div>
                     </div>
-                  </div>
-                  <div class="blog-content">
-                    <a href="#">
-                      <h4>{{ blog.title }}</h4>
+                    <a href="{% url 'blog_detail' blog.id %}">
+                      <h4 style="padding-bottom: unset; padding-left:10px;">{{ blog.title }}</h4>
                     </a>
-                    <p>
+
+                    <div class="blog_quote mx-0 text-justify">
                       {{ blog.quote }}
-                    </p>
-                    <a class="blog-btn" href="{% url 'blog_detail' blog.id %}"> Read more</a>
+                    </div>
+                    <div class="blog-meta">
+                      <a class="blog-btn" href="{% url 'blog_detail' blog.id %}"> Read more</a>
+                    </div>
                   </div>
                 </div>
               </div>
               {% endfor %}
 
-              {% endif %}
-              <!-- End single blog -->
-              <!-- Start single blog -->
-              <!-- End single blog -->
-              <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="col-md-12 col-sm-12 col-xs-12" style="padding-right: unset;">
                 <div class="blog-pagination">
                   <ul class="pagination">
-                    <li><a href="#">Prev</a></li>
-                    <li class="active"><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">Next</a></li>
+                    {% if current_page > 1 %}
+                    <li><a href="#"><i class="fa fa-backward"></i></a></li>
+                    {% endif %}
+
+                    {% for page in list_page %}
+                    <li><a href="/list_blog/?page={{page}}">{{page}}</a></li>
+                    {% endfor %}
+                    {% if current_page < max_page %}
+                    <li><a href="#"><i class="fa fa-forward"></i></a></li>
+                    {% endif %}
                   </ul>
                 </div>
               </div>
@@ -85,7 +90,7 @@
           </div>
         </div>
         <!-- Start Right Sidebar blog -->
-        <div class="col-md-4 col-sm-4 col-xs-12">
+        <div class="col-md-5 col-sm-5 col-xs-12">
           <div class="left-head-blog right-side">
             <div class="left-blog-page">
               <!-- search option start -->
@@ -103,8 +108,8 @@
               <div class="left-blog blog-category">
                 <h4>categories</h4>
                 <ul>
-                  {% for cate in category %}
-                  <li><a href="#">{{cate.title}}</a><span>12</span></li>
+                  {% for cate in count_cate %}
+                  <li><a href="#">{{cate.category}}</a><span>{{cate.count}}</span></li>
                   {% endfor %}
                 </ul>
               </div>
@@ -117,8 +122,8 @@
                   <!-- start single post -->
                   {% for blog in recent %}
                   <div class="recent-single-post">
-                    <div class="post-img py-2">
-                      <img src="{{ blog.images.first }}" alt="" style="width:100% !important;" />
+                    <div class="post-img py-2 border">
+                      <img style="border: .5px  rgb(228, 224, 224) dotted" src="{{ blog.images.first }}" alt="" />
                     </div>
                     <div class="pst-content">
                       <p>
@@ -153,5 +158,8 @@
     <!-- End row -->
   </div>
 </div>
+{% else %}
+Không tìm thấy yêu càu tìm kiếm
+{% endif %}
 <!--End of Blog Area-->
 {%endblock%}
