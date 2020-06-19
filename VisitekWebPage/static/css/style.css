@@ -602,9 +602,8 @@ div#preloader {
 .dropdown-menu {
   margin-top: 20px;
   padding: 10px 10px;
-  width: 295px;
+  width: auto;
   background: #7d99ce;
-  justify-content: center;
 }
 
 .dropdown-menu input {
@@ -619,9 +618,10 @@ div#preloader {
   font-size: 1.5rem;
 }
 
-/* .dropdown-items {
-  display: inline-block;
-} */
+.dropdown-items {
+  display: flex;
+  justify-content: center;
+}
 
 .header-right-link a.main-search {
   color: #151b2c;
@@ -6199,4 +6199,21 @@ img.mfp-img {
     z-index: 1;
     right: 0;
   }
+}
+
+.menu-active {
+  border: none;
+  outline: none;
+  padding: 10px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* Style the active class, and buttons on mouse-over */
+
+.activate a {
+  /* background-color: black !important;
+  opacity: 0.3; */
+  color: #3078fb !important;
 }

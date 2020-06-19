@@ -183,9 +183,49 @@ def search(request):
     return render(request, 'pages/blog/listBlog.html', context)
 
 
-# def customHandler404(request, e):
-#     return render(request, 'pages/404.html')
+def customHandler404(request, e):
+    return render(request, 'pages/404.html')
 
 
-# def customHandler500(request, e):
-#     return render(request, 'pages/404.html')
+def customHandler500(request):
+    return render(request, 'pages/404.html')
+
+
+def filter_category(request):
+    cate = request.GET.get('category')
+    # blog = Blog.objects.filter(category=cate)
+    print(blogs)
+    print(cate)
+    # category = Category.objects.all()
+    # recent = Blog.objects.order_by('-created_at')[:10]
+
+    # # count categoy
+    # count_cate = []
+    # for x in blogs:
+    #     temp = []
+    #     for y in count_cate:
+    #         temp.append(y['category'])
+    #     if x.category not in temp:
+    #         count_cate.append({
+    #             'category': x.category,
+    #             'count': Blog.objects.filter(category=x.category).count()
+    #         })
+    # #  pagination
+    # per_page = 4
+    # list_page = []
+    # current_page = int(request.GET.get('page') or 1)
+    # max_page = math.ceil(len(blogs)/per_page)
+    # for i in range(0, max_page):
+    #     list_page.append(i+1)
+    # result = blogs[(current_page - 1) * per_page: current_page * per_page]
+
+    # context = {
+    #     'blogs': blogs,
+    #     'category': category,
+    #     'recent': recent,
+    #     'count_cate': count_cate,
+    #     'list_page': list_page,
+    #     'current_page': current_page,
+    #     'max_page': max_page,
+    # }
+    return render(request, 'pages/blog/listBlog.html')

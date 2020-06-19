@@ -6212,7 +6212,8 @@ img.mfp-img {
 
 /* Style the active class, and buttons on mouse-over */
 
-.activate {
-  background-color: #3078fb !important;
-  color: white;
+.activate a {
+  /* background-color: black !important;
+  opacity: 0.3; */
+  color: #3078fb !important;
 }

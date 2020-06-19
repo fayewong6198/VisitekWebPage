@@ -1,5 +1,6 @@
 {% extends 'base.html' %} {% load static %} {% block content%}
 <!-- Start Bottom Header -->
+
 <div class="page-area">
   <div class="breadcumb-overlay"></div>
   <div class="container">
@@ -18,9 +19,9 @@
     </div>
   </div>
 </div>
+{% if blogs %}
 <!-- END Header -->
 <!--Blog Area Start-->
-{% if blogs %}
 <div class="blog-area fix area-padding">
   <div class="container">
     <div class="row">
@@ -74,14 +75,13 @@
                 <div class="blog-pagination">
                   <ul class="pagination">
                     {% if current_page > 1 %}
-                    <li><a href="#"><i class="fa fa-backward"></i></a></li>
+                    <li><a href="/blogs/?page={{current_page|add:-1}}"><i class="fa fa-backward"></i></a></li>
                     {% endif %}
-
                     {% for page in list_page %}
-                    <li><a href="/list_blog/?page={{page}}">{{page}}</a></li>
+                    <li class=""><a href="/blogs/?page={{page}}">{{page}}</a></li>
                     {% endfor %}
                     {% if current_page < max_page %}
-                    <li><a href="#"><i class="fa fa-forward"></i></a></li>
+                    <li><a href="/blogs/?page={{current_page|add:1}}"><i class="fa fa-forward"></i></a></li>
                     {% endif %}
                   </ul>
                 </div>
@@ -109,7 +109,9 @@
                 <h4>categories</h4>
                 <ul>
                   {% for cate in count_cate %}
-                  <li><a href="#">{{cate.category}}</a><span>{{cate.count}}</span></li>
+                  <li><a
+                      href="/blog_filter/?category={{cate.category}}">{{cate.category}}</a><span>{{cate.count}}</span>
+                  </li>
                   {% endfor %}
                 </ul>
               </div>
@@ -123,11 +125,12 @@
                   {% for blog in recent %}
                   <div class="recent-single-post">
                     <div class="post-img py-2 border">
-                      <img style="border: .5px  rgb(228, 224, 224) dotted" src="{{ blog.images.first }}" alt="" />
+                      <a href="{% url 'blog_detail' blog.id %}"> <img style="border: .5px  rgb(228, 224, 224) dotted"
+                          src="{{ blog.images.first }}" alt="" /></a>
                     </div>
                     <div class="pst-content">
                       <p>
-                        {{blog.title}}
+                        <a href="{% url 'blog_detail' blog.id %}">{{blog.title}}</a>
                       </p>
                       <span class="date-type">
                         {{blog.created_at}}
@@ -144,7 +147,7 @@
                   <h4>popular tags</h4>
                   <ul>
                     {% for cate in category %}
-                    <li><a href="#">{{cate.title}}</a></li>
+                    <li><a href="/blog_filter/?category={{cate.title}}">{{cate.title}}</a></li>
                     {% endfor %}
                   </ul>
                 </div>
@@ -159,7 +162,8 @@
   </div>
 </div>
 {% else %}
-Không tìm thấy yêu càu tìm kiếm
+<h5 class="text-center col-md-12"> Không tìm thấy yêu cầu tìm kiếm</h5>
+<p class="text-center col-md-12"> <a href="/" class="btn btn-outline-success">Continue</a></p>
 {% endif %}
 <!--End of Blog Area-->
 {%endblock%}

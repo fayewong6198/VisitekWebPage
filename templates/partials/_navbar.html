@@ -88,11 +88,20 @@
           <div class="collapse navbar-collapse" id="navbar-example">
             <div class="main-menu" id="croll-menu">
               <ul class="nav navbar-nav navbar-right">
-                <li><a title="Visitek trang chủ" href="/">Trang chủ</a>
+                <li class=""><a title="Visitek trang chủ" href="/">Trang chủ</a>
                 </li>
-                <li><a title="Visitek giới thiệu" href="/about">Giới thiệu</a>
+                <li class="{% if request.resolver_match.url_name == 'about' %}activate{% endif %}"><a title=" Visitek giới
+                  thiệu" href="/about">Giới thiệu</a>
                 </li>
-                <li><a title="Visitek dịch vụ" href="/services">Dịch vụ</a>
+                <li class="{% if request.resolver_match.url_name == 'services' %}activate{% endif %}
+                {% if request.resolver_match.url_name == 'detail_service' %}activate{% endif %}
+                {% if request.resolver_match.url_name == 'service_detail_consult' %}activate{% endif %}
+                {% if request.resolver_match.url_name == 'service_detail_manage' %}activate{% endif %}
+                {% if request.resolver_match.url_name == 'service_detail_outsource' %}activate{% endif %}
+                {% if request.resolver_match.url_name == 'service_detail_repair' %}activate{% endif %}
+                {% if request.resolver_match.url_name == 'service_detail_security' %}activate{% endif %}
+                ">
+                  <a title="Visitek dịch vụ" href="/services">Dịch vụ</a>
                   <ul class="sub-menu">
                     <li><a title="Visitek dịch vụ thiết kế sản phẩm" href="/service-details">Thiết Kế Sản Phẩm</a>
                     </li>
@@ -109,9 +118,12 @@
                         Thống</a></li>
                   </ul>
                 </li>
-
-                <li><a title="Visitek bài viết" href="/blogs">Blog</a></li>
-                <li><a title="Visitek Liên hệ" href="/contact">Liên Hệ</a></li>
+                <li class="{% if request.resolver_match.url_name == 'blogs' %}activate{% endif %}
+                {% if request.resolver_match.url_name == 'blog_detail' %}activate{% endif %}
+                {% if request.resolver_match.url_name == 'filter_category' %}activate{% endif %}
+                "><a title="Visitek bài viết" href="/blogs">Blog</a></li>
+                <li class="{% if request.resolver_match.url_name == 'contact' %}activate{% endif %}"><a
+                    title="Visitek Liên hệ" href="/contact">Liên Hệ</a></li>
               </ul>
             </div>
           </div>

@@ -4,7 +4,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = '(=7=-dxay2(zh8h%4e#3m(f77$#0tdqx(dj*&&_s2#z@e&0-o6'
 
-DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -21,6 +20,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ckeditor',
     'ckeditor_uploader',
+    'rest_framework',
+
 ]
 
 MIDDLEWARE = [
@@ -31,6 +32,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'VisitekWebPage.urls'
@@ -60,6 +62,11 @@ DATABASES = {
     }
 }
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
+}
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -86,7 +93,13 @@ USE_L10N = True
 USE_TZ = True
 
 
-DEBUG = True
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10
+}
+
+###########################################################
+# DEBUG = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'VisitekWebPage/static')
 STATIC_URL = '/static/'
 
@@ -95,8 +108,8 @@ STATICFILES_DIRS = [
 ]
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = 'media/'
-
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+##################################################################
 # ckeditor configs
 CKEDITOR_UPLOAD_PATH = MEDIA_ROOT + 'ck_uploads/'
 CKEDITOR_RESTRICT_BY_USER = True
@@ -104,3 +117,4 @@ CKEDITOR_BROWSE_SHOW_DIRS = True
 CKEDITOR_ALLOW_NONIMAGE_FILES = True
 
 ALLOWED_HOSTS = ['visitek.com.vn', 'localhost']
+####################################################

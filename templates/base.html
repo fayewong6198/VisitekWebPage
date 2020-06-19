@@ -26,6 +26,7 @@
 </head>
 
 <body>
+
   {% if messages %}
   {% for message in messages %}
   <div class="modal fade bd-example-modal-sm" style="border-radius: 10px" id='myModal123' tabindex="-1" role="dialog"
@@ -44,6 +45,7 @@
   </header>
   {% block content %} {% endblock %}
   {% include 'partials/_footer.html' %}
+
   <script src="{% static 'js/modernizr-2.8.3.min.js' %}"></script>
   <script src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
   <script src="{% static 'js/bootstrap.min.js' %}"></script>
@@ -57,13 +59,12 @@
   <script src="{% static 'js/form-validator.min.js' %}"></script>
   <script src="{% static 'js/plugins.js' %}"></script>
   <script src="{% static 'js/main.js' %}"></script>
-  <script>
+  <script type="text/javascript">
     $(document).ready(function () {
       $("#myModal123").modal("show");
       setTimeout(function () {
         $('#myModal123').modal("hide");
-      }, 1500); // <-- time in milliseconds, 1000 =  1 sec
-
+      }, 1500);// <-- time in milliseconds, 1000 =  1 sec
     });
   </script>
   <script>

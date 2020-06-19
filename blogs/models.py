@@ -16,7 +16,7 @@ class Blog(models.Model):
     quote = models.TextField()
     content = RichTextUploadingField(('content'))
     category = models.ForeignKey(
-        Category, on_delete=models.CASCADE, related_name='cate_blog')
+        'Category', on_delete=models.CASCADE, related_name='cate_blog')
     created_at = models.DateField(default=datetime.now)
 
     def __str__(self):
