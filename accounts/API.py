@@ -5,38 +5,20 @@ from .serializers import UserSerializer
 from rest_framework import generics
 from .permission import IsLoggedInUserOrAdmin, IsAdminUser
 from rest_framework.decorators import api_view
+from rest_framework.response import Response
 
 
-class UserViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
-
-    # Add this code block
-    def get_permissions(self):
-        permission_classes = []
-        if self.action == 'create':
-            permission_classes = [AllowAny]
-        elif self.action == 'retrieve' or self.action == 'update' or self.action == 'partial_update':
-            permission_classes = [IsLoggedInUserOrAdmin]
-        elif self.action == 'list' or self.action == 'destroy':
-            permission_classes = [IsAdminUser]
-        return [permission() for permission in permission_classes]
+def get_permissions(self):
+    permission_classes = []
+    if self.action == 'create':
+        permission_classes = [AllowAny]
+    elif self.action == 'retrieve' or self.action == 'update' or self.action == 'partial_update':
+        permission_classes = [IsLoggedInUserOrAdmin]
+    elif self.action == 'list' or self.action == 'destroy':
+        permission_classes = [IsAdminUser]
+    return [permission() for permission in permission_classes]
 
 
-# class RegisterAPI(generics.GenericAPIView):
-#     # serializer_class = UserSerializer
-#     # permission_classes = [permissions.AllowAny]
-
-#     def post(self, request, *args, **kwargs):
-
-#         serializer = self.get_serializer(data=request.data)
-
-#         if serializer.is_valid() == False:
-
-#             return Response(serializer.errors, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
-#         user = serializer.save()
-#         return Response({'mgs': 'success'})
 @api_view(['GET', 'POST'])
 def users(request):
     """
@@ -44,7 +26,6 @@ def users(request):
     """
     if request.method == 'GET':
         users = User.objects.all()
-        print('-------------------', users)
         serializer = UserSerializer(users, many=True)
         return Response(serializer.data)
 
@@ -62,8 +43,6 @@ def user_detail(request, pk):
     Retrieve, update or delete a code snippet.
     """
     try:
-        serializer_class = UserSerializer
-        permission_classes = [permissions.AllowAny]
         user = User.objects.get(pk)
     except User.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)

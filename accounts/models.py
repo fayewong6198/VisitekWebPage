@@ -35,10 +35,12 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractUser):
-    username = models.CharField(
-        blank=True, null=True, max_length=255, unique=True)
-    USERNAME_FIELD = 'username'
-    REQUIRED_FIELDS = ['email']
+    email = models.EmailField(max_length=255, unique=True)
+    username = models.CharField(max_length=255, unique=True)
+    first_name = models.CharField(max_length=255, null=True, blank=True)
+    last_name = models.CharField(max_length=255, null=True, blank=True)
+    is_active = models.BooleanField(default=True)
+    is_staff = models.BooleanField(default=False)
 
     def __str__(self):
-        return "{}".format(self.email)
+        return self.username

@@ -1,16 +1,16 @@
-from django.conf.urls import url, include
-from rest_framework import routers
-# from .API import UserViewSet, RegisterAPI
+from django.contrib import admin
+from django.urls import path, include
+from rest_framework.urlpatterns import format_suffix_patterns
 from .API import *
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+)
 
-router = routers.DefaultRouter()
-# router.register(r'users', UserViewSet)
 
 urlpatterns = [
-    # url(r'api/', include(router.urls)),
-    url(r'auth/', include('rest_auth.urls')),
-    # url(r'api/auth/register/', RegisterAPI.as_view()),
-    url(r'api/auth/register/', user_detail),
-    url(r'api/users/', users),
-
+    # Your URLs...
+    path('api/users/', users),
+    path('api/login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]
