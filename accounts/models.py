@@ -10,7 +10,7 @@ from datetime import datetime, date
 
 class UserManager(BaseUserManager):
 
-    def create_user(self, username, email, password=None, **extra_fields):
+    def create_user(self, username, email, password, **extra_fields):
         user = self.model(email=email, username=username, **extra_fields)
         user.set_password(password)
 
