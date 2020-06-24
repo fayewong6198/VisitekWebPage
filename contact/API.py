@@ -36,6 +36,7 @@ def detail_contact(request, id):
 
     elif request.method == 'DELETE':
         contact.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
+        serializer = ContactSerializer(contact)
+        return Response(serializer.data, status=status.HTTP_204_NO_CONTENT)
     else:
         return Response(status=status.HTTP_204_NO_CONTENT)

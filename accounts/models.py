@@ -1,28 +1,44 @@
-from __future__ import unicode_literals
+from django.conf import settings
+from django.utils.translation import ugettext_lazy as _
+from django.contrib.auth.models import AbstractUser
 from django.db import models
-from django.utils import timezone
-from django.contrib.auth.models import (
-    AbstractBaseUser, PermissionsMixin
-)
+
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
+
+from datetime import datetime, date
 
 
-# class User(AbstractBaseUser, PermissionsMixin):
-#     """
-#     An abstract base class implementing a fully featured User model with
-#     admin-compliant permissions.
+class UserManager(BaseUserManager):
 
-#     """
-#     username = models.CharField(max_length=40, unique=True)
-#     email = models.EmailField(max_length=40, unique=True)
-#     first_name = models.CharField(max_length=30, blank=True)
-#     last_name = models.CharField(max_length=30, blank=True)
-#     is_staff = models.BooleanField(default=False)
+    def create_user(self, username, email, password=None, **extra_fields):
+        user = self.model(email=email, username=username, **extra_fields)
+        user.set_password(password)
 
-#     objects = UserManager()
+        user.save(using=self._db)
 
-#     USERNAME_FIELD = 'username'
-#     REQUIRED_FIELDS = ['email', 'last_name']
+        return user
 
-#     def save(self, *args, **kwargs):
-#         super(User, self).save(*args, **kwargs)
-#         return self
+    def create_superuser(self, username, email, password=None, **extra_fields):
+        user = self.model(email=email, **extra_fields)
+        user.set_password(password)
+        extra_fields.setdefault('is_staff', True)
+        extra_fields.setdefault('is_superuser', True)
+
+        if extra_fields.get('is_staff') is not True:
+            raise ValueError('Superuser must have is_staff=True.')
+        if extra_fields.get('is_superuser') is not True:
+            raise ValueError('Superuser must have is_superuser=True.')
+
+        return self.create_user(username, email, password, **extra_fields)
+
+        return user
+
+
+class User(AbstractUser):
+    username = models.CharField(
+        blank=True, null=True, max_length=255, unique=True)
+    USERNAME_FIELD = 'username'
+    REQUIRED_FIELDS = ['email']
+
+    def __str__(self):
+        return "{}".format(self.email)
