@@ -32,5 +32,6 @@ Unidecode==1.1.1
 whitenoise==5.1.0
 wrapt==1.12.1
 yapf==0.29.0
-django-rest-auth-0.9.5
-djangorestframework-jwt-1.11.0
+django-rest-auth==0.9.5
+djangorestframework-jwt==1.11.0
+django-rest-knox==4.1.0

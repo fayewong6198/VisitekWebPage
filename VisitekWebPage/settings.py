@@ -4,9 +4,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = '(=7=-dxay2(zh8h%4e#3m(f77$#0tdqx(dj*&&_s2#z@e&0-o6'
 
-
-ALLOWED_HOSTS = []
-
 INSTALLED_APPS = [
     'blogs',
     'pages',
@@ -22,8 +19,8 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'rest_framework',
     'api',
-
-
+    'rest_framework.authtoken',
+    'knox',
 ]
 
 MIDDLEWARE = [
@@ -65,34 +62,11 @@ DATABASES = {
 }
 
 AUTH_USER_MODEL = "accounts.User"
+
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': ('knox.auth.TokenAuthentication',)
 }
-SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=999999),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
-    'ROTATE_REFRESH_TOKENS': False,
-    'BLACKLIST_AFTER_ROTATION': True,
 
-    'ALGORITHM': 'HS256',
-    # 'SIGNING_KEY': settings.SECRET_KEY,
-    'VERIFYING_KEY': None,
-
-    'AUTH_HEADER_TYPES': ('Bearer',),
-    'USER_ID_FIELD': 'id',
-    'USER_ID_CLAIM': 'user_id',
-
-    'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',),
-    'TOKEN_TYPE_CLAIM': 'token_type',
-
-    'JTI_CLAIM': 'jti',
-
-    'SLIDING_TOKEN_REFRESH_EXP_CLAIM': 'refresh_exp',
-    'SLIDING_TOKEN_LIFETIME': timedelta(minutes=5),
-    'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
-}
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -118,7 +92,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 ###########################################################
 # DEBUG = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'VisitekWebPage/static')
@@ -131,11 +104,12 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 ##################################################################
+
 # ckeditor configs
 CKEDITOR_UPLOAD_PATH = MEDIA_ROOT + 'ck_uploads/'
 CKEDITOR_RESTRICT_BY_USER = True
 CKEDITOR_BROWSE_SHOW_DIRS = True
 CKEDITOR_ALLOW_NONIMAGE_FILES = True
 
-ALLOWED_HOSTS = ['visitek.com.vn', 'localhost']
+ALLOWED_HOSTS = ['visitek.com.vn', 'localhost', '127.0.0.1']
 ####################################################
